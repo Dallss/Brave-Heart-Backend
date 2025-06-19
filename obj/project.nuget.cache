@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "D4ug/VegSOM=",
+  "success": true,
+  "projectFilePath": "/Users/dallsszz/BraveHeartBackend/BraveHeartBackend.csproj",
+  "expectedPackageFiles": [
+    "/Users/dallsszz/.nuget/packages/microsoft.aspnetcore.openapi/9.0.6/microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
+    "/Users/dallsszz/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
