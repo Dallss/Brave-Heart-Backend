@@ -1,25 +1,23 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel; 
 
 namespace BraveHeartBackend.Models
 {
-    public abstract class Product
+    public class Product
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string Name { get; set; }
-
-        [MaxLength(1000)]
-        public string Description { get; set; }
-
-        [Required]
-        [Range(0, double.MaxValue)]
         public decimal Price { get; set; }
 
         [Required]
-        [Range(0, int.MaxValue)]
+        [DefaultValue(0)]
         public int Stock { get; set; }
+
+        [ForeignKey("ProductType")]
+        public int ProductTypeId { get; set; }
+        public ProductType ProductType { get; set; }
     }
 }
