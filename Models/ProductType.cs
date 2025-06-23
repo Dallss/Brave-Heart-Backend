@@ -10,6 +10,7 @@ namespace BraveHeartBackend.Models
 
         [Required]
         public string Name { get; set; }
-        public List<ProductAttribute> Attributes { get; set; } = new();
+
+        public ICollection<ProductAttribute> Attributes { get; set; } = new List<ProductAttribute>();
     }
-} 
+}

@@ -1,0 +1,236 @@
+2025-06-23 23:30:01.125 +08:00 [INF] Application is shutting down...
+2025-06-23 23:43:16.724 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-23 23:43:17.763 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-23 23:43:17.819 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:43:17.850 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-23 23:43:17.867 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-23 23:43:17.910 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-23 23:43:17.912 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 23:43:17.912 +08:00 [INF] Hosting environment: Development
+2025-06-23 23:43:17.912 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-23 23:43:24.705 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - text/plain 64
+2025-06-23 23:43:24.731 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-23 23:43:24.752 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:43:24.754 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:43:24.757 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - 401 0 null 54.1322ms
+2025-06-23 23:43:34.528 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:43:34.541 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:43:34.560 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:43:34.624 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:43:34.730 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:43:34.753 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:43:34.761 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 197.9111ms
+2025-06-23 23:43:34.761 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:43:34.765 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 236.6993ms
+2025-06-23 23:43:37.880 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - text/plain 64
+2025-06-23 23:43:37.884 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:43:37.884 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:43:37.884 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - 401 0 null 3.933ms
+2025-06-23 23:43:42.078 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - text/plain 64
+2025-06-23 23:43:42.080 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:43:42.080 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:43:42.080 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - 401 0 null 2.4447ms
+2025-06-23 23:44:16.271 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:44:16.271 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:44:16.272 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:44:16.305 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:44:16.373 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:44:16.374 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:44:16.374 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 102.171ms
+2025-06-23 23:44:16.374 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:44:16.374 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 103.9962ms
+2025-06-23 23:46:47.254 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 64
+2025-06-23 23:46:47.256 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:46:47.257 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:46:47.264 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:46:47.265 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-23 23:46:47.266 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 8.1659ms
+2025-06-23 23:46:47.266 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:46:47.266 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 401 null text/plain; charset=utf-8 12.0008ms
+2025-06-23 23:47:07.314 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 64
+2025-06-23 23:47:07.317 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:07.318 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:47:07.322 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:47:07.322 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-23 23:47:07.323 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 4.8613ms
+2025-06-23 23:47:07.323 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:07.323 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 401 null text/plain; charset=utf-8 9.6226ms
+2025-06-23 23:47:12.663 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 64
+2025-06-23 23:47:12.664 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:12.664 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:47:12.667 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:47:12.668 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-23 23:47:12.668 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 4.1579ms
+2025-06-23 23:47:12.669 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:12.669 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 401 null text/plain; charset=utf-8 5.6891ms
+2025-06-23 23:47:26.177 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:47:26.178 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:26.178 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:47:26.181 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:47:26.257 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:47:26.258 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:47:26.258 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 79.9444ms
+2025-06-23 23:47:26.258 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:26.258 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 81.2627ms
+2025-06-23 23:47:52.478 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:47:52.480 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:52.480 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:47:52.484 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:47:52.558 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:47:52.559 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:47:52.559 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 78.7147ms
+2025-06-23 23:47:52.559 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:47:52.559 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 80.747ms
+2025-06-23 23:47:56.202 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - text/plain 64
+2025-06-23 23:47:56.203 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:47:56.203 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:47:56.203 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - 401 0 null 0.9125ms
+2025-06-23 23:53:31.260 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - text/plain 64
+2025-06-23 23:53:31.263 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:53:31.264 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:53:31.273 +08:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-23 23:53:31.296 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 31.1837ms
+2025-06-23 23:53:31.296 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:53:31.296 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 415 null application/problem+json; charset=utf-8 35.8963ms
+2025-06-23 23:54:41.966 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 64
+2025-06-23 23:54:41.966 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:54:41.967 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:54:41.985 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:54:41.986 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-23 23:54:41.986 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 19.3881ms
+2025-06-23 23:54:41.987 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:54:41.987 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 401 null text/plain; charset=utf-8 21.2201ms
+2025-06-23 23:55:44.683 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:55:44.691 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:55:44.692 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:55:44.692 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/User/all - 401 0 null 8.8871ms
+2025-06-23 23:55:51.131 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:55:51.132 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:55:51.132 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:55:51.136 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:55:51.213 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:55:51.213 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:55:51.213 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 81.0912ms
+2025-06-23 23:55:51.213 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:55:51.214 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 82.1532ms
+2025-06-23 23:56:20.230 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:56:20.231 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:20.232 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:20.232 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/all - 405 0 null 1.7529ms
+2025-06-23 23:56:27.970 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:56:27.970 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:27.970 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:27.970 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/all - 405 0 null 0.6957ms
+2025-06-23 23:56:54.474 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:56:54.475 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:54.475 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-23 23:56:54.475 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/all - 405 0 null 0.7198ms
+2025-06-23 23:56:59.048 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:56:59.049 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:56:59.049 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:56:59.049 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/User/all - 401 0 null 1.5152ms
+2025-06-23 23:57:03.345 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-23 23:57:03.346 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:57:03.346 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-23 23:57:03.349 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", a."UserType"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-23 23:57:03.424 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-23 23:57:03.425 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 23:57:03.425 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 78.9373ms
+2025-06-23 23:57:03.425 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-23 23:57:03.425 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 79.8191ms
+2025-06-23 23:57:06.934 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/User/all - text/plain 63
+2025-06-23 23:57:06.935 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:57:06.935 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:57:06.935 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/User/all - 401 0 null 0.7232ms
+2025-06-23 23:59:52.000 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - application/json 64
+2025-06-23 23:59:52.002 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-23 23:59:52.002 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 23:59:52.003 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/register-business-owner - 401 0 null 3.0042ms

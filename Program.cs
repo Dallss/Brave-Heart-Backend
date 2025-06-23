@@ -1,15 +1,19 @@
 using BraveHeartBackend.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using BraveHeartBackend.Models;
 using DotNetEnv;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Load environment variables from .env
 Env.Load();
 
-// Get DB connection info from env
+// Get DB connection info from .env
 string dbHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
 string dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
 string dbName = Environment.GetEnvironmentVariable("DB_NAME") ?? "braveheartdb";
@@ -26,62 +30,74 @@ builder.Services.AddDefaultIdentity<ApplicationUser>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 
-// Add Swagger for API documentation
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddHttpLogging(logging =>
+// Load JWT settings from .env
+string jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER")!;
+string jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE")!;
+string jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET_KEY")!;
+string jwtExpiry = Environment.GetEnvironmentVariable("JWT_EXPIRY_MINUTES") ?? "60";
+
+// Configure JWT Authentication
+builder.Services.AddAuthentication(options =>
 {
-    logging.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.All;
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtIssuer,
+        ValidAudience = jwtAudience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
+    };
 });
 
+// Add services
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
+// Configure Serilog for logging
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+// Replace default logger
+builder.Host.UseSerilog();
+
+// Register services
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Enable Swagger UI in development
+// Swagger UI for dev
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseHttpLogging();
-app.Use(async (context, next) =>
-{
-    Console.WriteLine($"{context.Request.Method} {context.Request.Path}");
-    await next();
-});
+
 app.UseHttpsRedirection();
+app.UseAuthentication(); // ✅ JWT Auth
+app.UseAuthorization();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
 
 app.MapControllers();
 
-// Create admin account on startup
-CreateAdminAccount(app).GetAwaiter().GetResult();
+// Create Admin account on startup
+await CreateAdminAccount(app);
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
 
 async Task CreateAdminAccount(WebApplication app)
 {
@@ -96,26 +112,33 @@ async Task CreateAdminAccount(WebApplication app)
     if (!await roleManager.RoleExistsAsync(adminRole))
     {
         await roleManager.CreateAsync(new IdentityRole(adminRole));
+        Console.WriteLine($"Admin Email: {adminEmail}, Password: {adminPassword}");
     }
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
-        adminUser = new ApplicationUser { UserName = adminEmail, Email = adminEmail, EmailConfirmed = true };
+        adminUser = new ApplicationUser
+        {
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
+
         var result = await userManager.CreateAsync(adminUser, adminPassword);
         if (result.Succeeded)
         {
             await userManager.AddToRoleAsync(adminUser, adminRole);
-            Console.WriteLine($"Admin user created: {adminEmail}");
+            Console.WriteLine($"✅ Admin user created: {adminEmail}");
         }
         else
         {
-            Console.WriteLine($"Failed to create admin: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+            Console.WriteLine($"❌ Failed to create admin: {string.Join(", ", result.Errors.Select(e => e.Description))}");
         }
     }
     else if (!await userManager.IsInRoleAsync(adminUser, adminRole))
     {
         await userManager.AddToRoleAsync(adminUser, adminRole);
-        Console.WriteLine($"Admin role assigned to existing user: {adminEmail}");
+        Console.WriteLine($"ℹ️ Admin role assigned to existing user: {adminEmail}");
     }
 }

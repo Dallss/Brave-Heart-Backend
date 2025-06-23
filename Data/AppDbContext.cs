@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using BraveHeartBackend.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace BraveHeartBackend.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -15,7 +17,6 @@ namespace BraveHeartBackend.Data
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<ProductAttribute> ProductAttributes { get; set; }
         public DbSet<ProductAttributeValue> ProductAttributeValues { get; set; }
-        public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<CheckoutDetails> CheckoutDetails { get; set; }
     }

@@ -8,13 +8,6 @@ namespace BraveHeartBackend.Models
         [Key]
         public int Id { get; set; }
 
-        // Foreign key to Cart
-        [Required]
-        public int CartId { get; set; }
-
-        [ForeignKey("CartId")]
-        public Cart Cart { get; set; }
-
         // Foreign key to Product
         [Required]
         public int ProductId { get; set; }
@@ -25,5 +18,12 @@ namespace BraveHeartBackend.Models
         [Required]
         [Range(1, int.MaxValue)]
         public int Quantity { get; set; }
+
+        // Foreign key to ApplicationUser
+        [Required]
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; }
     }
 }

@@ -5,10 +5,10 @@ namespace BraveHeartBackend.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        // Navigation property for the user's cart
-        public Cart Cart { get; set; }
+        // List of cart items directly under the user
+        public List<CartItem> CartItems { get; set; } = new();
 
-        // Navigation property for the user's checkout details
+        // List of checkout details
         public List<CheckoutDetails> CheckoutDetails { get; set; } = new();
     }
-} 
+}

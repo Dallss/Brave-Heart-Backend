@@ -9,11 +9,8 @@ namespace BraveHeartBackend.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
         public decimal Price { get; set; }
 
-        [Required]
-        [DefaultValue(0)]
         public int Stock { get; set; }
 
         [ForeignKey("ProductType")]
