@@ -3,12 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using BraveHeartBackend.Data;
 using BraveHeartBackend.Models;
-using BraveHeartBackend.DTOs.Product;
 using BraveHeartBackend.DTOs.ProductType;
-using BraveHeartBackend.DTOs.ProductAttribute;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace BraveHeartBackend.Controllers
 {
@@ -27,19 +26,12 @@ namespace BraveHeartBackend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductTypeResponseDTO>>> GetAll()
         {
-            var types = await _context.ProductTypes
-                .Include(pt => pt.Attributes)
-                .ToListAsync();
+            var types = await _context.ProductTypes.ToListAsync();
             var result = types.Select(pt => new ProductTypeResponseDTO
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDTO
-                {
-                    Id = attr.Id,
-                    Name = attr.Name,
-                    DataType = attr.DataType
-                }).ToList()
+                AttributesSchema = pt.AttributesSchema
             });
             return Ok(result);
         }
@@ -48,20 +40,13 @@ namespace BraveHeartBackend.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductTypeResponseDTO>> GetById(int id)
         {
-            var pt = await _context.ProductTypes
-                .Include(pt => pt.Attributes)
-                .FirstOrDefaultAsync(pt => pt.Id == id);
+            var pt = await _context.ProductTypes.FirstOrDefaultAsync(pt => pt.Id == id);
             if (pt == null) return NotFound();
             var result = new ProductTypeResponseDTO
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDTO
-                {
-                    Id = attr.Id,
-                    Name = attr.Name,
-                    DataType = attr.DataType
-                }).ToList()
+                AttributesSchema = pt.AttributesSchema
             };
             return Ok(result);
         }
@@ -74,11 +59,7 @@ namespace BraveHeartBackend.Controllers
             var productType = new ProductType
             {
                 Name = dto.Name,
-                Attributes = dto.Attributes.Select(a => new ProductAttribute
-                {
-                    Name = a.Name,
-                    DataType = a.DataType
-                }).ToList()
+                AttributesSchema = dto.AttributesSchema
             };
             _context.ProductTypes.Add(productType);
             await _context.SaveChangesAsync();
@@ -86,12 +67,7 @@ namespace BraveHeartBackend.Controllers
             {
                 Id = productType.Id,
                 Name = productType.Name,
-                Attributes = productType.Attributes.Select(attr => new ProductAttributeResponseDTO
-                {
-                    Id = attr.Id,
-                    Name = attr.Name,
-                    DataType = attr.DataType
-                }).ToList()
+                AttributesSchema = productType.AttributesSchema
             };
             return CreatedAtAction(nameof(GetById), new { id = productType.Id }, result);
         }
@@ -101,16 +77,10 @@ namespace BraveHeartBackend.Controllers
         [Authorize(Roles = "Admin,BusinessOwner")]
         public async Task<IActionResult> Update(int id, [FromBody] CreateProductTypeDTO dto)
         {
-            var pt = await _context.ProductTypes.Include(pt => pt.Attributes).FirstOrDefaultAsync(pt => pt.Id == id);
+            var pt = await _context.ProductTypes.FirstOrDefaultAsync(pt => pt.Id == id);
             if (pt == null) return NotFound();
             pt.Name = dto.Name;
-            // For simplicity, replace all attributes
-            _context.ProductAttributes.RemoveRange(pt.Attributes);
-            pt.Attributes = dto.Attributes.Select(a => new ProductAttribute
-            {
-                Name = a.Name,
-                DataType = a.DataType
-            }).ToList();
+            pt.AttributesSchema = dto.AttributesSchema;
             await _context.SaveChangesAsync();
             return NoContent();
         }
@@ -120,9 +90,8 @@ namespace BraveHeartBackend.Controllers
         [Authorize(Roles = "Admin,BusinessOwner")]
         public async Task<IActionResult> Delete(int id)
         {
-            var pt = await _context.ProductTypes.Include(pt => pt.Attributes).FirstOrDefaultAsync(pt => pt.Id == id);
+            var pt = await _context.ProductTypes.FirstOrDefaultAsync(pt => pt.Id == id);
             if (pt == null) return NotFound();
-            _context.ProductAttributes.RemoveRange(pt.Attributes);
             _context.ProductTypes.Remove(pt);
             await _context.SaveChangesAsync();
             return NoContent();

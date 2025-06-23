@@ -16,5 +16,8 @@ namespace BraveHeartBackend.Models
         [ForeignKey("ProductType")]
         public int ProductTypeId { get; set; }
         public ProductType ProductType { get; set; }
+
+        [Column(TypeName = "jsonb")]
+        public string Attributes { get; set; } // JSONB for attribute values
     }
 }

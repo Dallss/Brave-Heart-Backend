@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using BraveHeartBackend.DTOs.ProductAttribute;
 
 namespace BraveHeartBackend.DTOs.ProductType
 {
@@ -8,21 +6,13 @@ namespace BraveHeartBackend.DTOs.ProductType
     {
         [Required]
         public string Name { get; set; }
-
-        public List<CreateProductAttributeDTO> Attributes { get; set; } = new();
+        public string AttributesSchema { get; set; } // JSON array of objects: [{ "name": "capacity", "isRequired": true, "dataType": "number", ... }]
     }
 
     public class ProductTypeResponseDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<ProductAttributeResponseDTO> Attributes { get; set; }
-    }
-
-    public class ProductAttributeResponseDTO
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string DataType { get; set; }
+        public string AttributesSchema { get; set; } // JSON schema as string
     }
 }

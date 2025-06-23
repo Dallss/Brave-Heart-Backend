@@ -49,14 +49,10 @@ namespace BraveHeartBackend.Controllers
 
         // POST: api/Product
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin,BusinessOwner")]
         public async Task<IActionResult> Create([FromBody] ProductCreateDTO dto)
         {
             var currentUser = await _userManager.GetUserAsync(User);
-
-            if (!await IsBusinessOwner(currentUser))
-                return Forbid();
-
 
             var productTypeExists = await _context.ProductTypes
                 .AnyAsync(pt => pt.Id == dto.ProductTypeId);
@@ -65,7 +61,7 @@ namespace BraveHeartBackend.Controllers
 
             var product = new Product
             {
-                Price = dto.Price,
+                Price = dto.Price!.Value,
                 Stock = dto.Stock,
                 ProductTypeId = dto.ProductTypeId
             };
@@ -78,12 +74,10 @@ namespace BraveHeartBackend.Controllers
 
         // PUT: api/Product/5
         [HttpPut("{id}")]
-        [Authorize]
+        [Authorize(Roles = "Admin,BusinessOwner")]
         public async Task<IActionResult> Update(int id, [FromBody] Product updatedProduct)
         {
             var currentUser = await _userManager.GetUserAsync(User);
-            if (!await IsBusinessOwner(currentUser))
-                return Forbid();
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)
@@ -99,12 +93,10 @@ namespace BraveHeartBackend.Controllers
 
         // DELETE: api/Product/5
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "Admin,BusinessOwner")]
         public async Task<IActionResult> Delete(int id)
         {
             var currentUser = await _userManager.GetUserAsync(User);
-            if (!await IsBusinessOwner(currentUser))
-                return Forbid();
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)
@@ -113,15 +105,6 @@ namespace BraveHeartBackend.Controllers
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return NoContent();
-        }
-
-        // Helper: Checks if user has UserType == "BusinessOwner"
-        private async Task<bool> IsBusinessOwner(IdentityUser user)
-        {
-            var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == user.Id);
-            var userTypeProperty = dbUser?.GetType().GetProperty("UserType");
-            var userTypeValue = userTypeProperty?.GetValue(dbUser)?.ToString();
-            return userTypeValue == "BusinessOwner";
         }
     }
 }
