@@ -25,20 +25,21 @@ namespace BraveHeartBackend.Controllers
 
         // GET: api/ProductType
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductTypeResponseDTO>>> GetAll()
+        public async Task<ActionResult<IEnumerable<ProductTypeResponseDto>>> GetAll()
         {
             var types = await _context.ProductTypes
                 .Include(pt => pt.Attributes)
                 .ToListAsync();
-            var result = types.Select(pt => new ProductTypeResponseDTO
+            var result = types.Select(pt => new ProductTypeResponseDto
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDTO
+                Attributes = pt.Attributes.Select(attr => new ProductTypeResponseDto.ProductAttributeDto
                 {
                     Id = attr.Id,
                     Name = attr.Name,
-                    DataType = attr.DataType
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired
                 }).ToList()
             });
             return Ok(result);
@@ -46,21 +47,22 @@ namespace BraveHeartBackend.Controllers
 
         // GET: api/ProductType/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductTypeResponseDTO>> GetById(int id)
+        public async Task<ActionResult<ProductTypeResponseDto>> GetById(int id)
         {
             var pt = await _context.ProductTypes
                 .Include(pt => pt.Attributes)
                 .FirstOrDefaultAsync(pt => pt.Id == id);
             if (pt == null) return NotFound();
-            var result = new ProductTypeResponseDTO
+            var result = new ProductTypeResponseDto
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDTO
+                Attributes = pt.Attributes.Select(attr => new ProductTypeResponseDto.ProductAttributeDto
                 {
                     Id = attr.Id,
                     Name = attr.Name,
-                    DataType = attr.DataType
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired
                 }).ToList()
             };
             return Ok(result);
@@ -69,7 +71,7 @@ namespace BraveHeartBackend.Controllers
         // POST: api/ProductType
         [HttpPost]
         [Authorize(Roles = "Admin,BusinessOwner")]
-        public async Task<ActionResult<ProductTypeResponseDTO>> Create([FromBody] CreateProductTypeDTO dto)
+        public async Task<ActionResult<ProductTypeResponseDto>> Create([FromBody] CreateProductTypeDTO dto)
         {
             var productType = new ProductType
             {
@@ -77,20 +79,22 @@ namespace BraveHeartBackend.Controllers
                 Attributes = dto.Attributes.Select(a => new ProductAttribute
                 {
                     Name = a.Name,
-                    DataType = a.DataType
+                    DataType = a.DataType,
+                    IsRequired = a.IsRequired
                 }).ToList()
             };
             _context.ProductTypes.Add(productType);
             await _context.SaveChangesAsync();
-            var result = new ProductTypeResponseDTO
+            var result = new ProductTypeResponseDto
             {
                 Id = productType.Id,
                 Name = productType.Name,
-                Attributes = productType.Attributes.Select(attr => new ProductAttributeResponseDTO
+                Attributes = productType.Attributes.Select(attr => new ProductTypeResponseDto.ProductAttributeDto
                 {
                     Id = attr.Id,
                     Name = attr.Name,
-                    DataType = attr.DataType
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired
                 }).ToList()
             };
             return CreatedAtAction(nameof(GetById), new { id = productType.Id }, result);

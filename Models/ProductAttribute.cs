@@ -13,6 +13,8 @@ namespace BraveHeartBackend.Models
 
         [Required]
         public string DataType { get; set; } // e.g., "string", "int"
+
+        public bool IsRequired { get; set; } // Indicates if this attribute is required for product creation
         
         [ForeignKey("ProductType")]
         public int ProductTypeId { get; set; }
