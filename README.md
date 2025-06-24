@@ -12,21 +12,6 @@ BraveHeartBackend is an ASP.NET Core Web API project designed for robust backend
 - Swagger/OpenAPI documentation
 - Environment-based configuration
 
-## Project Structure
-
-```
-BraveHeartBackend/
-  Controllers/         # API controllers
-  Data/                # Entity Framework DbContext
-  DTOs/                # Data Transfer Objects
-  Logs/                # Log files (Serilog)
-  Migrations/          # EF Core migrations
-  Models/              # Entity models
-  Properties/          # Launch settings
-  Program.cs           # Application entry point
-  appsettings.json     # App configuration
-  BraveHeartBackend.csproj # Project file
-```
 
 ## Getting Started
 
