@@ -61,6 +61,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials());
+});
 
 // Configure Serilog for logging
 Log.Logger = new LoggerConfiguration()
@@ -73,11 +82,6 @@ Log.Logger = new LoggerConfiguration()
 // Replace default logger
 builder.Host.UseSerilog();
 
-// Register services
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 // Swagger UI for dev
@@ -88,9 +92,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowFrontend"); // Enable CORS before authentication
 app.UseAuthentication(); // ✅ JWT Auth
 app.UseAuthorization();
-
 
 app.MapControllers();
 

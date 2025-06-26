@@ -78,7 +78,7 @@ public class UserController : ControllerBase
             return Unauthorized("Invalid credentials.");
 
         var roles = await _userManager.GetRolesAsync(user);
-
+        var isAdmin = roles.Contains("Admin") || roles.Contains("BusinessOwner");
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id),
@@ -99,7 +99,13 @@ public class UserController : ControllerBase
             signingCredentials: creds
         );
 
-        return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+        return Ok(new
+        {
+            token = tokenString,
+            isAdmin = isAdmin
+        });
     }
 
     // 🔐 Admin-only: List all users

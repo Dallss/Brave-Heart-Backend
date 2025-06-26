@@ -1,0 +1,121 @@
+2025-06-26 15:16:41.231 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 15:16:42.260 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-26 15:16:42.315 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-26 15:16:42.344 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-26 15:16:42.362 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-26 15:16:42.407 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-26 15:16:42.408 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 15:16:42.408 +08:00 [INF] Hosting environment: Development
+2025-06-26 15:16:42.408 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-26 15:16:45.961 +08:00 [INF] Application is shutting down...
+2025-06-26 15:17:02.812 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 15:17:03.822 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-26 15:17:03.877 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-26 15:17:03.907 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-26 15:17:03.925 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-26 15:17:03.970 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-26 15:17:03.971 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 15:17:03.971 +08:00 [INF] Hosting environment: Development
+2025-06-26 15:17:03.971 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-26 17:59:07.912 +08:00 [INF] Application is shutting down...
+2025-06-26 17:59:34.772 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 17:59:36.573 +08:00 [INF] Executed DbCommand (59ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-26 17:59:36.657 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-26 17:59:36.701 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-26 17:59:36.728 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-26 17:59:36.799 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-26 17:59:36.801 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 17:59:36.801 +08:00 [INF] Hosting environment: Development
+2025-06-26 17:59:36.801 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-26 17:59:43.781 +08:00 [INF] Application is shutting down...
+2025-06-26 18:08:02.567 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 18:08:04.414 +08:00 [INF] Executed DbCommand (60ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-26 18:08:04.505 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-26 18:08:04.549 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-26 18:08:04.576 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-26 18:08:04.646 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-26 18:08:04.647 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:08:04.648 +08:00 [INF] Hosting environment: Development
+2025-06-26 18:08:04.648 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-26 18:08:33.200 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-26 18:08:33.307 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-26 18:08:33.364 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-26 18:08:33.399 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-26 18:08:33.573 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-26 18:08:33.755 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-26 18:08:33.791 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-26 18:08:33.807 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 402.633ms
+2025-06-26 18:08:33.814 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-26 18:08:33.828 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 630.9532ms
