@@ -1,4 +1,4 @@
- namespace BraveHeartBackend.DTOs.ProductAttribute
+namespace BraveHeartBackend.DTOs.ProductAttribute
 {
     public class CreateProductAttributeDTO
     {

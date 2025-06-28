@@ -837,3 +837,822 @@ ORDER BY p."Id", p0."Id", s."Id"
 2025-06-29 04:20:52.700 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 9.785ms
 2025-06-29 04:20:52.700 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
 2025-06-29 04:20:52.700 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 16.8197ms
+2025-06-29 04:52:38.743 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:52:38.783 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:52:38.792 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:52:38.794 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:52:38.842 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:52:38.844 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:52:38.851 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 57.0503ms
+2025-06-29 04:52:38.852 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:52:38.852 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 108.916ms
+2025-06-29 04:53:19.271 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:53:19.311 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:53:19.323 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:19.328 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:53:20.506 +08:00 [INF] Executed DbCommand (1,131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:53:20.509 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:53:20.512 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 1165.0806ms
+2025-06-29 04:53:20.513 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:20.539 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 1272.3897ms
+2025-06-29 04:53:45.663 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:53:45.673 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:53:45.678 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:45.682 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:53:45.691 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:53:45.694 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:53:45.695 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 11.7589ms
+2025-06-29 04:53:45.695 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:45.696 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 32.9182ms
+2025-06-29 04:53:48.444 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:53:48.451 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:53:48.453 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:48.457 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:53:48.515 +08:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:53:48.527 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:53:48.529 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 71.9857ms
+2025-06-29 04:53:48.530 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:53:48.530 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 86.5314ms
+2025-06-29 04:54:27.030 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:54:27.034 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:54:27.035 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:54:27.036 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:54:27.090 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:54:27.097 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:54:27.099 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 62.203ms
+2025-06-29 04:54:27.099 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:54:27.099 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 69.2395ms
+2025-06-29 04:54:32.251 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:54:32.262 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:54:32.267 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:54:32.269 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:54:32.287 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:54:32.293 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:54:32.295 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 25.9169ms
+2025-06-29 04:54:32.296 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:54:32.296 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 73.7718ms
+2025-06-29 04:55:05.196 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:55:05.201 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:55:05.204 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:05.205 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:55:05.227 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:55:05.232 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:55:05.234 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 26.1884ms
+2025-06-29 04:55:05.234 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:05.239 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 43.4594ms
+2025-06-29 04:55:07.625 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:55:07.633 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:55:07.636 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:07.638 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:55:07.673 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:55:07.731 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:55:07.733 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 94.4058ms
+2025-06-29 04:55:07.734 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:07.734 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 108.7665ms
+2025-06-29 04:55:14.176 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:55:14.179 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:55:14.181 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:14.183 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:55:14.196 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:55:14.199 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:55:14.199 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 11.9052ms
+2025-06-29 04:55:14.200 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:55:14.200 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 23.8995ms
+2025-06-29 04:56:25.746 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:56:25.749 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:56:25.750 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:25.751 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:56:25.788 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:56:25.792 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:56:25.793 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 40.2183ms
+2025-06-29 04:56:25.793 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:25.793 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 47.8867ms
+2025-06-29 04:56:34.309 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:56:34.318 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:56:34.324 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:34.325 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:56:34.381 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:56:34.485 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:56:34.491 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 162.6128ms
+2025-06-29 04:56:34.494 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:34.494 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 185.1544ms
+2025-06-29 04:56:46.051 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:56:46.055 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:56:46.056 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:46.056 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:56:46.077 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:56:46.081 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:56:46.084 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 27.4601ms
+2025-06-29 04:56:46.085 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:46.085 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 34.1599ms
+2025-06-29 04:56:48.538 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:56:48.566 +08:00 [INF] CORS policy execution successful.
+2025-06-29 04:56:48.772 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:48.785 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:56:48.854 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:56:48.948 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:56:48.949 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 163.3747ms
+2025-06-29 04:56:48.951 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:56:48.975 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 440.8763ms
+2025-06-29 05:12:49.786 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 52
+2025-06-29 05:12:49.804 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:12:49.828 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:12:49.914 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:12:49.915 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:12:49.916 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 87.4356ms
+2025-06-29 05:12:49.916 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:12:49.916 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 130.158ms
+2025-06-29 05:13:31.586 +08:00 [INF] Application is shutting down...
+me zone;
+2025-06-29 05:12:27.870 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250628211215_AddRefreshTokenFields', '9.0.6');
+2025-06-29 05:12:34.351 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:12:35.337 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:12:35.411 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:12:35.445 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:12:35.465 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:12:35.521 +08:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5185: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-29 05:13:41.315 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:13:42.382 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:13:42.435 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:13:42.468 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:13:42.486 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:13:42.537 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 05:13:42.538 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 05:13:42.538 +08:00 [INF] Hosting environment: Development
+2025-06-29 05:13:42.538 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 05:18:23.857 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 52
+2025-06-29 05:18:23.947 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 05:18:23.986 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:24.007 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:24.107 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:18:24.111 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:18:24.117 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 107.476ms
+2025-06-29 05:18:24.121 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:24.132 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 291.2957ms
+2025-06-29 05:18:26.263 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 52
+2025-06-29 05:18:26.266 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:26.267 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:26.290 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:18:26.290 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:18:26.291 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 23.7967ms
+2025-06-29 05:18:26.291 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:26.291 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 28.3192ms
+2025-06-29 05:18:36.495 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 50
+2025-06-29 05:18:36.498 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:36.499 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:36.502 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:18:36.617 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 05:18:36.645 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:18:36.725 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:18:36.732 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 05:18:36.739 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 239.8532ms
+2025-06-29 05:18:36.739 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:36.739 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 244.1428ms
+2025-06-29 05:18:40.433 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 50
+2025-06-29 05:18:40.434 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:40.434 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:40.448 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:18:40.519 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 05:18:40.520 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:18:40.522 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:18:40.522 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 05:18:40.523 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 88.2097ms
+2025-06-29 05:18:40.523 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:18:40.523 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 89.5553ms
+2025-06-29 05:18:48.882 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/refresh-token - application/json 755
+2025-06-29 05:18:48.883 +08:00 [INF] Executing endpoint 'UserController.RefreshToken (BraveHeartBackend)'
+2025-06-29 05:18:48.887 +08:00 [INF] Route matched with {action = "RefreshToken", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(BraveHeartBackend.DTOs.User.RefreshTokenDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:48.934 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-29 05:18:48.937 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 05:18:48.940 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:18:48.942 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:18:48.942 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 05:18:48.943 +08:00 [INF] Executed action UserController.RefreshToken (BraveHeartBackend) in 55.4275ms
+2025-06-29 05:18:48.943 +08:00 [INF] Executed endpoint 'UserController.RefreshToken (BraveHeartBackend)'
+2025-06-29 05:18:48.943 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/refresh-token - 200 null application/json; charset=utf-8 60.5103ms
+2025-06-29 05:18:57.566 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - null null
+2025-06-29 05:18:57.592 +08:00 [INF] Executing endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 05:18:57.596 +08:00 [INF] Route matched with {action = "RevokeToken", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RevokeToken() on controller UserController (BraveHeartBackend).
+2025-06-29 05:18:57.620 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-29 05:18:57.622 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:18:57.625 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:18:57.625 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-29 05:18:57.626 +08:00 [INF] Executed action UserController.RevokeToken (BraveHeartBackend) in 29.6451ms
+2025-06-29 05:18:57.626 +08:00 [INF] Executed endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 05:18:57.626 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - 200 null text/plain; charset=utf-8 59.7284ms
+2025-06-29 05:19:12.280 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/refresh-token - application/json 755
+2025-06-29 05:19:12.280 +08:00 [INF] Executing endpoint 'UserController.RefreshToken (BraveHeartBackend)'
+2025-06-29 05:19:12.280 +08:00 [INF] Route matched with {action = "RefreshToken", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(BraveHeartBackend.DTOs.User.RefreshTokenDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:19:12.283 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-29 05:19:12.284 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:19:12.284 +08:00 [INF] Executed action UserController.RefreshToken (BraveHeartBackend) in 3.4626ms
+2025-06-29 05:19:12.284 +08:00 [INF] Executed endpoint 'UserController.RefreshToken (BraveHeartBackend)'
+2025-06-29 05:19:12.284 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/refresh-token - 401 null text/plain; charset=utf-8 4.4437ms
+2025-06-29 05:23:10.722 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:23:10.749 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:23:10.750 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:23:10.758 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:23:10.826 +08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-29 05:23:10.852 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:23:10.898 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:23:10.915 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 156.8612ms
+2025-06-29 05:23:10.915 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:23:10.915 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 193.0869ms
+2025-06-29 05:26:10.694 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:26:11.751 +08:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:26:11.823 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:26:11.859 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:26:11.877 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:26:11.934 +08:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5185: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-29 05:26:20.873 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:26:21.969 +08:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:26:22.065 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:26:22.112 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:26:22.134 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:26:22.193 +08:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5185: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-29 05:26:57.332 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:26:58.319 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:26:58.370 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:26:58.401 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:26:58.419 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:26:58.469 +08:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5185: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-29 05:28:38.202 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 05:28:39.269 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 05:28:39.336 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:28:39.367 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 05:28:39.385 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 05:28:39.431 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 05:28:39.432 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 05:28:39.432 +08:00 [INF] Hosting environment: Development
+2025-06-29 05:28:39.432 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 05:28:59.950 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 05:28:59.980 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 05:28:59.981 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:28:59.985 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 36.1394ms
+2025-06-29 05:28:59.991 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 68
+2025-06-29 05:28:59.994 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:00.021 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:00.034 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:00.103 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:29:00.107 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:29:00.111 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 74.8757ms
+2025-06-29 05:29:00.111 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:00.115 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 124.2845ms
+2025-06-29 05:29:05.881 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 05:29:05.883 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:05.883 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 1.9565ms
+2025-06-29 05:29:05.885 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 68
+2025-06-29 05:29:05.886 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:05.887 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:05.888 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:05.928 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:29:05.929 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:29:05.929 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 40.7694ms
+2025-06-29 05:29:05.929 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:05.929 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 44.441ms
+2025-06-29 05:29:07.977 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 69
+2025-06-29 05:29:07.977 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:07.980 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:07.980 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:07.984 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:29:07.984 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:29:07.985 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 4.4782ms
+2025-06-29 05:29:07.985 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:07.985 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 8.0773ms
+2025-06-29 05:29:22.120 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 05:29:22.124 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:22.125 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 5ms
+2025-06-29 05:29:22.127 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 69
+2025-06-29 05:29:22.128 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:22.128 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:22.129 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:22.151 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:29:22.151 +08:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-29 05:29:22.151 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 22.1956ms
+2025-06-29 05:29:22.151 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:22.152 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 401 null text/plain; charset=utf-8 24.5165ms
+2025-06-29 05:29:42.648 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 05:29:42.651 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:42.652 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 3.2112ms
+2025-06-29 05:29:42.654 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 69
+2025-06-29 05:29:42.654 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:42.655 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:42.656 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:42.681 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:29:42.819 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 05:29:42.847 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:29:42.926 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:29:42.932 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 05:29:42.938 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 281.7347ms
+2025-06-29 05:29:42.938 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:29:42.938 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 284.9173ms
+2025-06-29 05:29:47.767 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:29:47.769 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:47.770 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 2.7405ms
+2025-06-29 05:29:47.772 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:29:47.779 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:47.827 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:29:47.831 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:29:47.883 +08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-29 05:29:47.909 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:29:47.952 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:29:47.964 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 132.7167ms
+2025-06-29 05:29:47.964 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:29:47.964 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 192.4715ms
+2025-06-29 05:29:58.229 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/revoke-token - null null
+2025-06-29 05:29:58.230 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:58.231 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/revoke-token - 204 null null 1.9085ms
+2025-06-29 05:29:58.234 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - null 0
+2025-06-29 05:29:58.235 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:29:58.242 +08:00 [INF] Executing endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 05:29:58.246 +08:00 [INF] Route matched with {action = "RevokeToken", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RevokeToken() on controller UserController (BraveHeartBackend).
+2025-06-29 05:29:58.259 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-29 05:29:58.262 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:29:58.265 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:29:58.266 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-29 05:29:58.266 +08:00 [INF] Executed action UserController.RevokeToken (BraveHeartBackend) in 19.887ms
+2025-06-29 05:29:58.266 +08:00 [INF] Executed endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 05:29:58.266 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - 200 null text/plain; charset=utf-8 32.0298ms
+2025-06-29 05:30:07.730 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 05:30:07.730 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:30:07.731 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 0.8348ms
+2025-06-29 05:30:07.735 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 69
+2025-06-29 05:30:07.735 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:30:07.735 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:30:07.735 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 05:30:07.741 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 05:30:07.820 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 05:30:07.821 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 05:30:07.838 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 05:30:07.839 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 05:30:07.839 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 103.6732ms
+2025-06-29 05:30:07.839 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 05:30:07.840 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 104.9634ms
+2025-06-29 05:30:11.023 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:30:11.023 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:30:11.023 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 0.7827ms
+2025-06-29 05:30:11.026 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:30:11.027 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:30:11.028 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:30:11.028 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:30:11.032 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:30:11.038 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:30:11.039 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 10.528ms
+2025-06-29 05:30:11.039 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:30:11.039 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 12.9869ms

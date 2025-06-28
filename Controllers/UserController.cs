@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using BraveHeartBackend.Models;
+using BraveHeartBackend.Services;
+using BraveHeartBackend.DTOs.User;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using BraveHeartBackend.DTOs.User;
-
 
 [ApiController]
 [Route("api/[controller]")]
@@ -16,12 +16,18 @@ public class UserController : ControllerBase
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly IConfiguration _config;
+    private readonly JwtService _jwtService;
 
-    public UserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration config)
+    public UserController(
+        UserManager<ApplicationUser> userManager, 
+        RoleManager<IdentityRole> roleManager, 
+        IConfiguration config,
+        JwtService jwtService)
     {
         _userManager = userManager;
         _roleManager = roleManager;
         _config = config;
+        _jwtService = jwtService;
     }
 
     // 🔓 Register a Customer (public)
@@ -69,7 +75,7 @@ public class UserController : ControllerBase
         return Ok("Business owner registered successfully.");
     }
 
-    // Login
+    // Login with refresh token support
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginDTO dto)
     {
@@ -77,35 +83,38 @@ public class UserController : ControllerBase
         if (user == null || !await _userManager.CheckPasswordAsync(user, dto.Password))
             return Unauthorized("Invalid credentials.");
 
-        var roles = await _userManager.GetRolesAsync(user);
-        var isAdmin = roles.Contains("Admin") || roles.Contains("BusinessOwner");
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(ClaimTypes.Name, user.UserName)
-        };
+        // Generate tokens using the JWT service
+        var tokenResponse = await _jwtService.GenerateTokensAsync(user);
+        
+        return Ok(tokenResponse);
+    }
 
-        foreach (var role in roles)
-            claims.Add(new Claim(ClaimTypes.Role, role));
+    // Refresh token endpoint
+    [HttpPost("refresh-token")]
+    public async Task<IActionResult> RefreshToken(RefreshTokenDTO dto)
+    {
+        var tokenResponse = await _jwtService.RefreshTokenAsync(dto.AccessToken, dto.RefreshToken);
+        
+        if (tokenResponse == null)
+            return Unauthorized("Invalid refresh token.");
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET_KEY")!));
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        return Ok(tokenResponse);
+    }
 
-        var token = new JwtSecurityToken(
-            issuer: Environment.GetEnvironmentVariable("JWT_ISSUER"),
-            audience: Environment.GetEnvironmentVariable("JWT_AUDIENCE"),
-            claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(double.Parse(Environment.GetEnvironmentVariable("JWT_EXPIRY_MINUTES") ?? "60")),
-            signingCredentials: creds
-        );
+    // Revoke refresh token (logout)
+    [HttpPost("revoke-token")]
+    [Authorize]
+    public async Task<IActionResult> RevokeToken()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized("User ID not found in token.");
 
-        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+        var success = await _jwtService.RevokeRefreshTokenAsync(userId);
+        if (!success)
+            return BadRequest("Failed to revoke token.");
 
-        return Ok(new
-        {
-            token = tokenString,
-            isAdmin = isAdmin
-        });
+        return Ok("Token revoked successfully.");
     }
 
     // 🔐 Admin-only: List all users
@@ -145,5 +154,4 @@ public class UserController : ControllerBase
             Roles = roles
         });
     }
-
 }

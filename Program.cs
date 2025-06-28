@@ -1,5 +1,6 @@
 using BraveHeartBackend.Data;
 using BraveHeartBackend.Models;
+using BraveHeartBackend.Services;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -61,6 +62,9 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Register JWT Service
+builder.Services.AddScoped<JwtService>();
 
 // Add CORS policy
 builder.Services.AddCors(options =>

@@ -10,5 +10,9 @@ namespace BraveHeartBackend.Models
 
         // List of checkout details
         public List<CheckoutDetails> CheckoutDetails { get; set; } = new();
+
+        // Refresh token fields
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }
