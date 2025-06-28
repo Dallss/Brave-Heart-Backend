@@ -3,6 +3,7 @@ using System;
 using BraveHeartBackend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BraveHeartBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250628181845_AddProductName")]
+    partial class AddProductName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -194,80 +197,6 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImageUrl = "https://example.com/iphone15.jpg",
-                            Name = "iPhone 15",
-                            Price = 999.00m,
-                            ProductTypeId = 1,
-                            Stock = 50
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImageUrl = "https://example.com/galaxy-s24.jpg",
-                            Name = "Samsung Galaxy S24",
-                            Price = 899.00m,
-                            ProductTypeId = 1,
-                            Stock = 30
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImageUrl = "https://example.com/macbook-pro.jpg",
-                            Name = "MacBook Pro",
-                            Price = 1999.00m,
-                            ProductTypeId = 1,
-                            Stock = 20
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ImageUrl = "https://example.com/abc-extinguisher.jpg",
-                            Name = "ABC Fire Extinguisher",
-                            Price = 89.99m,
-                            ProductTypeId = 2,
-                            Stock = 100
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ImageUrl = "https://example.com/co2-extinguisher.jpg",
-                            Name = "CO2 Fire Extinguisher",
-                            Price = 149.99m,
-                            ProductTypeId = 2,
-                            Stock = 75
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ImageUrl = "https://example.com/fire-blanket.jpg",
-                            Name = "Fire Blanket",
-                            Price = 29.99m,
-                            ProductTypeId = 2,
-                            Stock = 200
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ImageUrl = "https://example.com/firefighter-jacket.jpg",
-                            Name = "Firefighter Jacket",
-                            Price = 299.99m,
-                            ProductTypeId = 3,
-                            Stock = 25
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ImageUrl = "https://example.com/safety-helmet.jpg",
-                            Name = "Safety Helmet",
-                            Price = 89.99m,
-                            ProductTypeId = 3,
-                            Stock = 60
-                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductAttribute", b =>
@@ -297,80 +226,6 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("ProductAttributes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Color",
-                            ProductTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Storage",
-                            ProductTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Brand",
-                            ProductTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "ExtinguisherClass",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Capacity",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            DataType = "string",
-                            IsRequired = false,
-                            Name = "Material",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Size",
-                            ProductTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 8,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Material",
-                            ProductTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 9,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Color",
-                            ProductTypeId = 3
-                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductAttributeValue", b =>
@@ -398,253 +253,6 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductAttributeValues");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ProductAttributeId = 1,
-                            ProductId = 1,
-                            Value = "Black"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ProductAttributeId = 1,
-                            ProductId = 1,
-                            Value = "White"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ProductAttributeId = 2,
-                            ProductId = 1,
-                            Value = "128GB"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ProductAttributeId = 2,
-                            ProductId = 1,
-                            Value = "256GB"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ProductAttributeId = 3,
-                            ProductId = 1,
-                            Value = "Apple"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ProductAttributeId = 1,
-                            ProductId = 2,
-                            Value = "Black"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ProductAttributeId = 1,
-                            ProductId = 2,
-                            Value = "Blue"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ProductAttributeId = 2,
-                            ProductId = 2,
-                            Value = "128GB"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ProductAttributeId = 2,
-                            ProductId = 2,
-                            Value = "512GB"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ProductAttributeId = 3,
-                            ProductId = 2,
-                            Value = "Samsung"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ProductAttributeId = 1,
-                            ProductId = 3,
-                            Value = "Space Gray"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ProductAttributeId = 1,
-                            ProductId = 3,
-                            Value = "Silver"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ProductAttributeId = 2,
-                            ProductId = 3,
-                            Value = "512GB"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ProductAttributeId = 2,
-                            ProductId = 3,
-                            Value = "1TB"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ProductAttributeId = 3,
-                            ProductId = 3,
-                            Value = "Apple"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ProductAttributeId = 4,
-                            ProductId = 4,
-                            Value = "ABC"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ProductAttributeId = 5,
-                            ProductId = 4,
-                            Value = "5 lbs"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ProductAttributeId = 5,
-                            ProductId = 4,
-                            Value = "10 lbs"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ProductAttributeId = 6,
-                            ProductId = 4,
-                            Value = "Steel"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ProductAttributeId = 4,
-                            ProductId = 5,
-                            Value = "CO2"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ProductAttributeId = 5,
-                            ProductId = 5,
-                            Value = "10 lbs"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ProductAttributeId = 6,
-                            ProductId = 5,
-                            Value = "Aluminum"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ProductAttributeId = 4,
-                            ProductId = 6,
-                            Value = "N/A"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ProductAttributeId = 5,
-                            ProductId = 6,
-                            Value = "4ft x 6ft"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ProductAttributeId = 6,
-                            ProductId = 6,
-                            Value = "Fiberglass"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ProductAttributeId = 7,
-                            ProductId = 7,
-                            Value = "Large"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            ProductAttributeId = 7,
-                            ProductId = 7,
-                            Value = "XL"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            ProductAttributeId = 8,
-                            ProductId = 7,
-                            Value = "Nomex"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            ProductAttributeId = 9,
-                            ProductId = 7,
-                            Value = "Yellow"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            ProductAttributeId = 9,
-                            ProductId = 7,
-                            Value = "Orange"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            ProductAttributeId = 7,
-                            ProductId = 8,
-                            Value = "Medium"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            ProductAttributeId = 7,
-                            ProductId = 8,
-                            Value = "Large"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            ProductAttributeId = 8,
-                            ProductId = 8,
-                            Value = "ABS Plastic"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            ProductAttributeId = 9,
-                            ProductId = 8,
-                            Value = "White"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            ProductAttributeId = 9,
-                            ProductId = 8,
-                            Value = "Yellow"
-                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductType", b =>
@@ -662,23 +270,6 @@ namespace BraveHeartBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Electronics"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Fire Safety Equipment"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Clothing"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

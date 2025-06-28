@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BraveHeartBackend.Data;
 using BraveHeartBackend.DTOs.Product;
+using BraveHeartBackend.DTOs.ProductAttribute;
 
 namespace BraveHeartBackend.Controllers
 {
@@ -28,9 +29,34 @@ namespace BraveHeartBackend.Controllers
         {
             var products = await _context.Products
                 .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values)
                 .ToListAsync();
 
-            return Ok(products);
+            var result = products.Select(p => new ProductResponseDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price,
+                Stock = p.Stock,
+                ImageUrl = p.ImageUrl,
+                Attributes = p.ProductType.Attributes.Select(attr => new ProductAttributeResponseDto
+                {
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired,
+                    Values = attr.Values
+                        .Where(v => v.ProductId == p.Id)
+                        .Select(v => new ProductAttributeValueResponseDto
+                        {
+                            Id = v.Id,
+                            Value = v.Value
+                        }).ToList()
+                }).ToList()
+            });
+
+            return Ok(result);
         }
 
         // GET: api/Product/5
@@ -39,12 +65,37 @@ namespace BraveHeartBackend.Controllers
         {
             var product = await _context.Products
                 .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
                 return NotFound();
 
-            return Ok(product);
+            var result = new ProductResponseDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Stock = product.Stock,
+                ImageUrl = product.ImageUrl,
+                Attributes = product.ProductType.Attributes.Select(attr => new ProductAttributeResponseDto
+                {
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired,
+                    Values = attr.Values
+                        .Where(v => v.ProductId == product.Id)
+                        .Select(v => new ProductAttributeValueResponseDto
+                        {
+                            Id = v.Id,
+                            Value = v.Value
+                        }).ToList()
+                }).ToList()
+            };
+
+            return Ok(result);
         }
 
         // POST: api/Product
@@ -77,9 +128,11 @@ namespace BraveHeartBackend.Controllers
 
             var product = new Product
             {
+                Name = dto.Name,
                 Price = dto.Price,
                 Stock = dto.Stock,
-                ProductTypeId = dto.ProductTypeId
+                ProductTypeId = dto.ProductTypeId,
+                ImageUrl = dto.ImageUrl
             };
 
             _context.Products.Add(product);
@@ -105,13 +158,46 @@ namespace BraveHeartBackend.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
+            // Fetch the created product with all its data for response
+            var createdProduct = await _context.Products
+                .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values)
+                .FirstOrDefaultAsync(p => p.Id == product.Id);
+
+            if (createdProduct == null)
+                return NotFound();
+
+            var response = new ProductResponseDto
+            {
+                Id = createdProduct.Id,
+                Name = createdProduct.Name,
+                Price = createdProduct.Price,
+                Stock = createdProduct.Stock,
+                ImageUrl = createdProduct.ImageUrl,
+                Attributes = createdProduct.ProductType.Attributes.Select(attr => new ProductAttributeResponseDto
+                {
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired,
+                    Values = attr.Values
+                        .Where(v => v.ProductId == createdProduct.Id)
+                        .Select(v => new ProductAttributeValueResponseDto
+                        {
+                            Id = v.Id,
+                            Value = v.Value
+                        }).ToList()
+                }).ToList()
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = product.Id }, response);
         }
 
         // PUT: api/Product/5
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin,BusinessOwner")]
-        public async Task<IActionResult> Update(int id, [FromBody] Product updatedProduct)
+        public async Task<IActionResult> Update(int id, [FromBody] ProductCreateDTO dto)
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
@@ -119,9 +205,11 @@ namespace BraveHeartBackend.Controllers
             if (product == null)
                 return NotFound();
 
-            product.Price = updatedProduct.Price;
-            product.Stock = updatedProduct.Stock;
-            product.ProductTypeId = updatedProduct.ProductTypeId;
+            product.Name = dto.Name;
+            product.Price = dto.Price;
+            product.Stock = dto.Stock;
+            product.ProductTypeId = dto.ProductTypeId;
+            product.ImageUrl = dto.ImageUrl;
 
             await _context.SaveChangesAsync();
             return NoContent();

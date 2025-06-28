@@ -227,3 +227,918 @@ WHERE a."UserId" = @__userId_0
 2025-06-27 01:30:13.588 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 119.3803ms
 2025-06-27 01:30:13.588 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
 2025-06-27 01:30:13.592 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 133.4541ms
+2025-06-27 02:31:57.318 +08:00 [INF] Application is shutting down...
+eters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-27 01:53:24.873 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-27 01:53:24.886 +08:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-27 01:53:24.889 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-27 01:53:24.891 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-27 01:53:24.902 +08:00 [INF] Applying migration '20250626175308_AddProductImageUrl'.
+2025-06-27 01:53:24.931 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Products" ADD "ImageUrl" text;
+2025-06-27 01:53:24.933 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250626175308_AddProductImageUrl', '9.0.6');
+2025-06-27 02:32:06.211 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:32:07.262 +08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 02:32:07.319 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 02:32:07.349 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 02:32:07.366 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 02:32:07.413 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 02:32:07.415 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:32:07.415 +08:00 [INF] Hosting environment: Development
+2025-06-27 02:32:07.415 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 02:32:45.765 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 02:32:45.826 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:32:45.884 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:32:45 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:32:45.900 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:32:45 pm'.
+2025-06-27 02:32:45.903 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 02:32:45.921 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 02:32:46.109 +08:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 02:32:46.140 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:32:46.162 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 237.8243ms
+2025-06-27 02:32:46.166 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 02:32:46.174 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 410.8189ms
+2025-06-27 02:34:08.963 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 02:34:09.004 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:34:09 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:34:09.007 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:34:09 pm'.
+2025-06-27 02:34:09.008 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 02:34:09.012 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 02:34:09.121 +08:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 02:34:09.124 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:34:09.126 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 113.0336ms
+2025-06-27 02:34:09.126 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 02:34:09.126 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 165.2196ms
+2025-06-27 02:34:13.007 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType/1 - null null
+2025-06-27 02:34:13.019 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:34:13 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:34:13.021 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:34:13 pm'.
+2025-06-27 02:34:13.021 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetById (BraveHeartBackend)'
+2025-06-27 02:34:13.039 +08:00 [INF] Route matched with {action = "GetById", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 02:34:13.092 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p1."Id", p1."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM (
+    SELECT p."Id", p."Name"
+    FROM "ProductTypes" AS p
+    WHERE p."Id" = @__id_0
+    LIMIT 1
+) AS p1
+LEFT JOIN "ProductAttributes" AS p0 ON p1."Id" = p0."ProductTypeId"
+ORDER BY p1."Id"
+2025-06-27 02:34:13.094 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto'.
+2025-06-27 02:34:13.095 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetById (BraveHeartBackend) in 55.5734ms
+2025-06-27 02:34:13.095 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetById (BraveHeartBackend)'
+2025-06-27 02:34:13.095 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType/1 - 200 null application/json; charset=utf-8 90.3427ms
+2025-06-27 02:35:36.777 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:35:36.783 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:35:36 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:35:36.813 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:35:36 pm'.
+2025-06-27 02:35:36.813 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:35:36.837 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:35:36.877 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:35:36.899 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:35:36.904 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 66.7278ms
+2025-06-27 02:35:36.905 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:35:36.905 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 127.6968ms
+2025-06-27 02:37:24.870 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:37:24.878 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:37:24 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:37:24.885 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:37:24 pm'.
+2025-06-27 02:37:24.886 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:37:24.887 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:37:24.947 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:37:24.954 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:37:24.955 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 67.3566ms
+2025-06-27 02:37:24.955 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:37:24.955 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 86.2453ms
+2025-06-27 02:38:08.253 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:38:08.264 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:08 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:38:08.270 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:08 pm'.
+2025-06-27 02:38:08.271 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:38:08.272 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:38:08.306 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:38:08.309 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:38:08.309 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 36.938ms
+2025-06-27 02:38:08.310 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:38:08.310 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 57.089ms
+2025-06-27 02:38:29.846 +08:00 [INF] Application is shutting down...
+2025-06-27 02:38:37.722 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:38:39.286 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 02:38:39.351 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 02:38:39.388 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 02:38:39.436 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 02:38:39.720 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 02:38:39.722 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:38:39.722 +08:00 [INF] Hosting environment: Development
+2025-06-27 02:38:39.723 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 02:38:43.511 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:38:43.544 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:38:43.605 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:43 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:38:43.617 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:43 pm'.
+2025-06-27 02:38:43.619 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:38:43.637 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:38:43.721 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:38:43.751 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:38:43.770 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 131.3995ms
+2025-06-27 02:38:43.774 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:38:43.779 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 269.312ms
+2025-06-27 02:38:50.964 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/1 - null null
+2025-06-27 02:38:50.973 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:50 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:38:50.974 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:38:50 pm'.
+2025-06-27 02:38:50.975 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:38:50.988 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:38:51.031 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:38:51.032 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:38:51.033 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 44ms
+2025-06-27 02:38:51.033 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:38:51.033 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/1 - 200 null application/json; charset=utf-8 70.0284ms
+2025-06-27 02:39:02.760 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:39:02.769 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:02 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:39:02.781 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:02 pm'.
+2025-06-27 02:39:02.781 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:39:02.783 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:39:02.799 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:39:02.801 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:39:02.802 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 18.8699ms
+2025-06-27 02:39:02.802 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:39:02.802 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 43.1467ms
+2025-06-27 02:39:08.308 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/1 - null null
+2025-06-27 02:39:08.312 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:08 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:39:08.315 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:08 pm'.
+2025-06-27 02:39:08.316 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:39:08.317 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:39:08.346 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:39:08.352 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:39:08.353 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 34.936ms
+2025-06-27 02:39:08.354 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:39:08.354 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/1 - 200 null application/json; charset=utf-8 46.0585ms
+2025-06-27 02:39:12.060 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/2 - null null
+2025-06-27 02:39:12.061 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:12 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:39:12.062 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:12 pm'.
+2025-06-27 02:39:12.062 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:39:12.062 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:39:12.066 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:39:12.067 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:39:12.067 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 4.9014ms
+2025-06-27 02:39:12.067 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:39:12.068 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/2 - 200 null application/json; charset=utf-8 7.667ms
+2025-06-27 02:39:17.796 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-27 02:39:17.797 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:17 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:39:17.798 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:39:17 pm'.
+2025-06-27 02:39:17.798 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:39:17.799 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:39:17.822 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-27 02:39:17.823 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 02:39:17.823 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 24.6827ms
+2025-06-27 02:39:17.823 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-27 02:39:17.824 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 27.6188ms
+2025-06-27 02:40:22.078 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/1 - null null
+2025-06-27 02:40:22.091 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:40:22 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:40:22.095 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:40:22 pm'.
+2025-06-27 02:40:22.096 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:40:22.097 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:40:22.125 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:40:22.132 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:40:22.134 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 35.8776ms
+2025-06-27 02:40:22.134 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:40:22.134 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/1 - 200 null application/json; charset=utf-8 56.5097ms
+2025-06-27 02:41:53.973 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/1 - null null
+2025-06-27 02:41:53.988 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:41:53 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:41:53.994 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:41:53 pm'.
+2025-06-27 02:41:53.998 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:41:54.000 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:41:54.026 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:41:54.027 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:41:54.027 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 27.128ms
+2025-06-27 02:41:54.034 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:41:54.034 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/1 - 200 null application/json; charset=utf-8 61.1598ms
+2025-06-27 02:41:57.863 +08:00 [INF] Application is shutting down...
+2025-06-27 02:42:05.619 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:42:06.615 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 02:42:06.684 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 02:42:06.713 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 02:42:06.732 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 02:42:06.778 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 02:42:06.779 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:42:06.779 +08:00 [INF] Hosting environment: Development
+2025-06-27 02:42:06.779 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 02:42:09.664 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/1 - null null
+2025-06-27 02:42:09.693 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:42:09.749 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:09 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:42:09.763 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:09 pm'.
+2025-06-27 02:42:09.766 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:09.778 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:42:09.867 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:42:09.893 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:42:09.908 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 127.015ms
+2025-06-27 02:42:09.912 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:09.916 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/1 - 200 null application/json; charset=utf-8 253.7248ms
+2025-06-27 02:42:14.002 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/2 - null null
+2025-06-27 02:42:14.008 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:14 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:42:14.009 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:14 pm'.
+2025-06-27 02:42:14.009 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:14.010 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:42:14.038 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:42:14.040 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 02:42:14.041 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 30.9517ms
+2025-06-27 02:42:14.041 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:14.041 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/2 - 200 null application/json; charset=utf-8 39.1038ms
+2025-06-27 02:42:18.767 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/20 - null null
+2025-06-27 02:42:18.770 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:18 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 02:42:18.771 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 6:42:18 pm'.
+2025-06-27 02:42:18.772 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:18.772 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 02:42:18.776 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 02:42:18.777 +08:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-27 02:42:18.799 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 27.2011ms
+2025-06-27 02:42:18.799 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 02:42:18.800 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/20 - 404 null application/problem+json; charset=utf-8 32.9944ms
+2025-06-27 03:38:42.338 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product/2 - null null
+2025-06-27 03:38:42.349 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 7:38:42 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 03:38:42.355 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 7:38:42 pm'.
+2025-06-27 03:38:42.357 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 03:38:42.358 +08:00 [INF] Route matched with {action = "GetById", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-27 03:38:42.427 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-06-27 03:38:42.433 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-27 03:38:42.434 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend) in 76.0855ms
+2025-06-27 03:38:42.434 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetById (BraveHeartBackend)'
+2025-06-27 03:38:42.438 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product/2 - 200 null application/json; charset=utf-8 100.0442ms
+2025-06-27 03:45:28.064 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-27 03:45:28.075 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 7:45:28 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 03:45:28.094 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 6:16:28 pm', Current time (UTC): '26/6/2025 7:45:28 pm'.
+2025-06-27 03:45:28.113 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 03:45:28.116 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 03:45:28.118 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - 405 0 null 53.9602ms
+2025-06-27 03:45:35.913 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-27 03:45:35.915 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 03:45:35.941 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-27 03:45:36.010 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 03:45:36.125 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-27 03:45:36.138 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-27 03:45:36.143 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 201.8563ms
+2025-06-27 03:45:36.143 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 03:45:36.143 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 230.3518ms
+2025-06-27 03:45:39.057 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-27 03:45:39.074 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 03:45:39.074 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 03:45:39.074 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - 405 0 null 17.5739ms
+2025-06-27 03:47:35.049 +08:00 [INF] Application is shutting down...
+2025-06-27 03:47:44.242 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 03:47:45.245 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 03:47:45.313 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 03:47:45.343 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 03:47:45.360 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 03:47:45.406 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 03:47:45.407 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 03:47:45.407 +08:00 [INF] Hosting environment: Development
+2025-06-27 03:47:45.407 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 03:47:49.665 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-27 03:47:49.695 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 03:47:49.758 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 03:47:49.764 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-27 03:47:49.773 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 6.6317ms
+2025-06-27 03:47:49.778 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 03:47:49.778 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Cloud name must be specified in Account!
+   at CloudinaryDotNet.ApiShared..ctor(Account account)
+   at CloudinaryDotNet.Api..ctor(Account account)
+   at CloudinaryDotNet.Cloudinary..ctor(Account account)
+   at CloudinaryService..ctor(CloudinaryConfig config) in /Users/dallsszz/BraveHeartBackend/CloudinaryService.cs:line 13
+   at Program.<>c.<<Main>$>b__0_4(IServiceProvider sp) in /Users/dallsszz/BraveHeartBackend/Program.cs:line 84
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method211(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-27 03:47:49.796 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - 500 null text/plain; charset=utf-8 133.0958ms
+2025-06-27 03:54:01.078 +08:00 [INF] Application is shutting down...
+2025-06-27 03:54:06.070 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 03:54:07.113 +08:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 03:54:07.167 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 03:54:07.196 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 03:54:07.214 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 03:54:07.260 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 03:54:07.261 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 03:54:07.262 +08:00 [INF] Hosting environment: Development
+2025-06-27 03:54:07.262 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 03:54:20.182 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-27 03:54:20.218 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 03:54:20.280 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 03:54:20.285 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-27 03:54:20.294 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 6.634ms
+2025-06-27 03:54:20.298 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 03:54:20.298 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Cloud name must be specified in Account!
+   at CloudinaryDotNet.ApiShared..ctor(Account account)
+   at CloudinaryDotNet.Api..ctor(Account account)
+   at CloudinaryDotNet.Cloudinary..ctor(Account account)
+   at CloudinaryService..ctor(CloudinaryConfig config) in /Users/dallsszz/BraveHeartBackend/CloudinaryService.cs:line 13
+   at Program.<>c.<<Main>$>b__0_4(IServiceProvider sp) in /Users/dallsszz/BraveHeartBackend/Program.cs:line 84
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method211(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-27 03:54:20.315 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - 500 null text/plain; charset=utf-8 135.0422ms
+2025-06-27 03:59:15.398 +08:00 [INF] Application is shutting down...
+2025-06-27 03:59:57.021 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 03:59:58.214 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 03:59:58.271 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 03:59:58.301 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 03:59:58.329 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 03:59:58.375 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 03:59:58.377 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 03:59:58.377 +08:00 [INF] Hosting environment: Development
+2025-06-27 03:59:58.377 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 04:00:04.521 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-27 04:00:04.572 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 04:00:04.634 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 04:00:04.640 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-27 04:00:04.651 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-27 04:00:04.671 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 27.9734ms
+2025-06-27 04:00:04.675 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-27 04:00:04.675 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature - 200 null application/json; charset=utf-8 155.8852ms
+2025-06-27 04:06:38.460 +08:00 [INF] Application is shutting down...
+2025-06-27 04:12:47.232 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 04:12:48.473 +08:00 [INF] Executed DbCommand (231ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-27 04:12:48.769 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 04:12:48.836 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-27 04:12:48.866 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-27 04:12:48.944 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-27 04:12:48.946 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 04:12:48.946 +08:00 [INF] Hosting environment: Development
+2025-06-27 04:12:48.947 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-27 04:13:03.078 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - null null
+2025-06-27 04:13:03.127 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 04:13:03.128 +08:00 [INF] CORS policy execution successful.
+2025-06-27 04:13:03.132 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - 204 null null 55.7174ms
+2025-06-27 04:13:03.137 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 50
+2025-06-27 04:13:03.140 +08:00 [INF] CORS policy execution successful.
+2025-06-27 04:13:03.165 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 04:13:03.189 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-27 04:13:03.256 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 04:13:03.365 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-27 04:13:03.387 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-27 04:13:03.395 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 203.4214ms
+2025-06-27 04:13:03.395 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 04:13:03.399 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 262.4807ms
+2025-06-27 06:01:51.973 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 06:01:52.139 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:01:52 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 06:01:52.173 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:01:52 pm'.
+2025-06-27 06:01:52.176 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:01:52.222 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:01:52.499 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:01:52.555 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:01:52.576 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 353.3086ms
+2025-06-27 06:01:52.576 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:01:52.576 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 608.1169ms
+2025-06-27 06:07:36.529 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 06:07:36.566 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:07:36.577 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:07:36.582 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:07:36.623 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:07:36.626 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:07:36.627 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 45.283ms
+2025-06-27 06:07:36.627 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:07:36.628 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 99.1464ms
+2025-06-27 06:09:11.726 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 06:09:11.740 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:09:11.744 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:09:11.766 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:09:11.784 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:09:11.788 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:09:11.790 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 22.1424ms
+2025-06-27 06:09:11.790 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:09:11.790 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 64.928ms
+2025-06-27 06:17:00.626 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - application/json 317
+2025-06-27 06:17:00.648 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:17:00 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 06:17:00.652 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:17:00 pm'.
+2025-06-27 06:17:00.653 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:17:00.653 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:17:00.689 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:17:00.692 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:17:00.695 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 41.6828ms
+2025-06-27 06:17:00.695 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:17:00.695 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 69.9567ms
+2025-06-27 06:18:23.842 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-27 06:18:23.856 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:18:23.859 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 17.9377ms
+2025-06-27 06:18:23.863 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 92
+2025-06-27 06:18:23.864 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:18:23.882 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-27 06:18:23.888 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 06:18:23.889 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 401 0 null 25.4335ms
+2025-06-27 06:18:30.715 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - application/json 317
+2025-06-27 06:18:30.747 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:18:30 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 06:18:30.750 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:18:30 pm'.
+2025-06-27 06:18:30.750 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:18:30.751 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:18:30.773 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:18:30.774 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:18:30.775 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 24.1976ms
+2025-06-27 06:18:30.775 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:18:30.776 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 60.4942ms
+2025-06-27 06:19:47.570 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-27 06:19:47.576 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:19:47.577 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 7.124ms
+2025-06-27 06:19:47.579 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 81
+2025-06-27 06:19:47.580 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:19:47.590 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-27 06:19:47.592 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 06:19:47.592 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 401 0 null 12.7797ms
+2025-06-27 06:20:11.545 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - null null
+2025-06-27 06:20:11.547 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:20:11.548 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - 204 null null 2.8229ms
+2025-06-27 06:20:11.550 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 50
+2025-06-27 06:20:11.552 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:20:11.553 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 06:20:11.555 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-27 06:20:11.629 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-27 06:20:11.717 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-27 06:20:11.720 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-27 06:20:11.720 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 165.3574ms
+2025-06-27 06:20:11.720 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-27 06:20:11.721 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 170.4657ms
+2025-06-27 06:20:30.821 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-27 06:20:30.822 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:20:30.823 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 2.6762ms
+2025-06-27 06:20:30.825 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 81
+2025-06-27 06:20:30.825 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:20:30.830 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-27 06:20:30.830 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 06:20:30.831 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 401 0 null 5.6058ms
+2025-06-27 06:20:52.804 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 06:20:52.807 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:20:52.811 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:20:52.854 +08:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:20:52.858 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:20:52.858 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 47.029ms
+2025-06-27 06:20:52.859 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:20:52.859 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 54.9627ms
+2025-06-27 06:20:53.015 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/favicon.ico - null null
+2025-06-27 06:20:53.020 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/favicon.ico - 404 0 null 5.2887ms
+2025-06-27 06:20:53.023 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5185/favicon.ico, Response status code: 404
+2025-06-27 06:21:03.300 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-27 06:21:03.301 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:21:03.302 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:21:03.306 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:21:03.307 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:21:03.307 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 5.3844ms
+2025-06-27 06:21:03.307 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:21:03.308 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 7.2357ms
+2025-06-27 06:24:12.894 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-27 06:24:12.896 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:24:12.899 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 4.9076ms
+2025-06-27 06:24:12.901 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 80
+2025-06-27 06:24:12.902 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:24:12.938 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-27 06:24:12.957 +08:00 [INF] Route matched with {action = "Create", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]] Create(BraveHeartBackend.DTOs.ProductType.CreateProductTypeDTO) on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:24:13.136 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductTypes" ("Name")
+VALUES (@p0)
+RETURNING "Id";
+2025-06-27 06:24:13.158 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductAttributes" ("DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (@p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-27 06:24:13.175 +08:00 [INF] Executing CreatedAtActionResult, writing value of type 'BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto'.
+2025-06-27 06:24:13.199 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend) in 239.2323ms
+2025-06-27 06:24:13.199 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-27 06:24:13.200 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 201 null application/json; charset=utf-8 298.7483ms
+2025-06-27 06:24:18.184 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - application/json 317
+2025-06-27 06:24:18.188 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:24:18 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-27 06:24:18.189 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '26/6/2025 8:45:36 pm', Current time (UTC): '26/6/2025 10:24:18 pm'.
+2025-06-27 06:24:18.189 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:24:18.189 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:24:18.195 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-27 06:24:18.196 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 06:24:18.197 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 6.9873ms
+2025-06-27 06:24:18.197 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-27 06:24:18.197 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 12.9592ms
+2025-06-27 06:25:46.664 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-27 06:25:46.667 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:25:46.674 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 9.4081ms
+2025-06-27 06:25:46.680 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 85
+2025-06-27 06:25:46.680 +08:00 [INF] CORS policy execution successful.
+2025-06-27 06:25:46.684 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-27 06:25:46.685 +08:00 [INF] Route matched with {action = "Create", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]] Create(BraveHeartBackend.DTOs.ProductType.CreateProductTypeDTO) on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-27 06:25:46.695 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductTypes" ("Name")
+VALUES (@p0)
+RETURNING "Id";
+2025-06-27 06:25:46.696 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductAttributes" ("DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (@p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-27 06:25:46.697 +08:00 [INF] Executing CreatedAtActionResult, writing value of type 'BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto'.
+2025-06-27 06:25:46.698 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend) in 13.2431ms
+2025-06-27 06:25:46.698 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-27 06:25:46.699 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 201 null application/json; charset=utf-8 19.053ms

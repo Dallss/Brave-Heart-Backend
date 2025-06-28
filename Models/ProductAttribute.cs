@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace BraveHeartBackend.Models
 {
@@ -19,5 +20,7 @@ namespace BraveHeartBackend.Models
         [ForeignKey("ProductType")]
         public int ProductTypeId { get; set; }
         public ProductType ProductType { get; set; }
+        
+        public ICollection<ProductAttributeValue> Values { get; set; } = new List<ProductAttributeValue>();
     }
 } 

@@ -1,0 +1,573 @@
+2025-06-28 20:20:05.870 +08:00 [INF] Application is shutting down...
+2025-06-28 20:38:47.665 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-28 20:38:48.703 +08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-28 20:38:48.758 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-28 20:38:48.787 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-28 20:38:48.805 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-28 20:38:48.850 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-28 20:38:48.851 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-28 20:38:48.851 +08:00 [INF] Hosting environment: Development
+2025-06-28 20:38:48.851 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-28 20:38:53.108 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/ - null null
+2025-06-28 20:38:53.135 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-28 20:38:53.156 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/ - 404 0 null 50.991ms
+2025-06-28 20:38:53.162 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5185/, Response status code: 404
+2025-06-28 20:40:00.702 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - null null
+2025-06-28 20:40:00.715 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:40:00.718 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - 204 null null 15.8639ms
+2025-06-28 20:40:00.720 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 50
+2025-06-28 20:40:00.722 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:40:00.726 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:40:00.751 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-28 20:40:00.848 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-28 20:40:00.962 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-28 20:40:00.985 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:40:00.993 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 240.4361ms
+2025-06-28 20:40:00.994 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:40:00.998 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 278.1993ms
+2025-06-28 20:40:05.758 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:40:05.761 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:40:05.764 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:40:05.768 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:40:05.830 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:40:05.852 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:40:05.858 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 89.0845ms
+2025-06-28 20:40:05.858 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:40:05.858 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 99.5642ms
+2025-06-28 20:40:44.230 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/api/Cloudinary/signature - null null
+2025-06-28 20:40:44.232 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:40:44.234 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/api/Cloudinary/signature - 204 null null 3.7635ms
+2025-06-28 20:40:44.236 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/api/Cloudinary/signature - application/json 61
+2025-06-28 20:40:44.236 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:40:44.238 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/api/Cloudinary/signature - 404 0 null 1.857ms
+2025-06-28 20:40:44.238 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5185/api/api/Cloudinary/signature, Response status code: 404
+2025-06-28 20:41:13.110 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:41:13.113 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:41:13.114 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:41:13.115 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:41:13.121 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:41:13.124 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:41:13.125 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 10.3282ms
+2025-06-28 20:41:13.125 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:41:13.125 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 15.6198ms
+2025-06-28 20:41:22.927 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature - null null
+2025-06-28 20:41:22.930 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:41:22.931 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature - 204 null null 3.3867ms
+2025-06-28 20:41:22.934 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Cloudinary/signature - application/json 61
+2025-06-28 20:41:22.934 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:41:22.935 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-28 20:41:22.937 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-28 20:41:22.937 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Cloudinary/signature - 405 0 null 3.5152ms
+2025-06-28 20:41:53.631 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:41:53.636 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:41:53.637 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:41:53.638 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:41:53.656 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:41:53.660 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:41:53.662 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 23.7108ms
+2025-06-28 20:41:53.663 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:41:53.663 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 32.0516ms
+2025-06-28 20:43:15.753 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:43:15.756 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:43:15.757 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:15.758 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:43:15.797 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:43:15.799 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:43:15.800 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 41.2382ms
+2025-06-28 20:43:15.800 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:15.800 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 46.7299ms
+2025-06-28 20:43:23.311 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:43:23.315 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:43:23.315 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:23.316 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:43:23.340 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:43:23.341 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:43:23.342 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 25.7002ms
+2025-06-28 20:43:23.342 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:23.343 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 31.4746ms
+2025-06-28 20:43:32.109 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:43:32.112 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:43:32.113 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:32.114 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:43:32.140 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:43:32.143 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:43:32.143 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 29.3633ms
+2025-06-28 20:43:32.144 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:32.144 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 34.9943ms
+2025-06-28 20:43:43.269 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:43:43.270 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:43:43.272 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:43.272 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:43:43.278 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:43:43.280 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:43:43.281 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 8.3566ms
+2025-06-28 20:43:43.281 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:43:43.281 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 12.3465ms
+2025-06-28 20:44:01.627 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:44:01.630 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:44:01.631 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:44:01.631 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:44:01.664 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:44:01.665 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:44:01.666 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 33.9337ms
+2025-06-28 20:44:01.666 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:44:01.666 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 38.4483ms
+2025-06-28 20:48:14.845 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:48:14.849 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:48:14.850 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:48:14.852 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:48:14.955 +08:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:48:14.957 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:48:14.957 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 105.1481ms
+2025-06-28 20:48:14.957 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:48:14.957 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 111.9761ms
+2025-06-28 20:49:13.399 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 20:49:13.405 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:49:13.406 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 6.6459ms
+2025-06-28 20:49:13.410 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 75
+2025-06-28 20:49:13.412 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:49:13.441 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-28 20:49:13.447 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-28 20:49:13.447 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 401 0 null 36.7942ms
+2025-06-28 20:49:17.204 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:49:17.205 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:49:17.205 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:49:17.207 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:49:17.243 +08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:49:17.245 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:49:17.245 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 38.3952ms
+2025-06-28 20:49:17.246 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:49:17.246 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 41.5387ms
+2025-06-28 20:49:56.819 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751114997&folder=braveheart-product-images - null null
+2025-06-28 20:49:56.822 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:49:56.822 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751114997&folder=braveheart-product-images - 204 null null 3.1862ms
+2025-06-28 20:49:56.824 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751114997&folder=braveheart-product-images - application/json null
+2025-06-28 20:49:56.824 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:49:56.825 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:49:56.840 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 20:49:56.865 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:49:56.870 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 30.2185ms
+2025-06-28 20:49:56.870 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:49:56.870 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751114997&folder=braveheart-product-images - 200 null application/json; charset=utf-8 46.5783ms
+2025-06-28 20:50:05.323 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 20:50:05.323 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:50:05.323 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 0.5752ms
+2025-06-28 20:50:05.327 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 79
+2025-06-28 20:50:05.327 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:50:05.329 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-28 20:50:05.330 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-28 20:50:05.330 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 401 0 null 3.2277ms
+2025-06-28 20:51:20.104 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:51:20.106 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:51:20.109 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:51:20.110 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:51:20.120 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:51:20.121 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:51:20.123 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 13.0517ms
+2025-06-28 20:51:20.123 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:51:20.124 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 19.8122ms
+2025-06-28 20:51:39.845 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115100&folder=braveheart-product-images - null null
+2025-06-28 20:51:39.847 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:51:39.848 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115100&folder=braveheart-product-images - 204 null null 3.1108ms
+2025-06-28 20:51:39.850 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115100&folder=braveheart-product-images - application/json null
+2025-06-28 20:51:39.850 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:51:39.851 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:51:39.852 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 20:51:39.854 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:51:39.855 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 2.9405ms
+2025-06-28 20:51:39.855 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:51:39.855 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115100&folder=braveheart-product-images - 200 null application/json; charset=utf-8 5.6053ms
+2025-06-28 20:51:51.930 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 20:51:51.930 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:51:51.931 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 1.2945ms
+2025-06-28 20:51:51.934 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 78
+2025-06-28 20:51:51.936 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:51:51.953 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-28 20:51:51.955 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-28 20:51:51.958 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 401 0 null 23.9836ms
+2025-06-28 20:54:56.535 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:54:56.542 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:54:56.544 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:54:56.546 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:54:56.671 +08:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:54:56.672 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:54:56.673 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 126.247ms
+2025-06-28 20:54:56.673 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:54:56.674 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 139.4111ms
+2025-06-28 20:55:16.810 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115317 - null null
+2025-06-28 20:55:16.812 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:16.813 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115317 - 204 null null 3.4954ms
+2025-06-28 20:55:16.816 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115317 - application/json null
+2025-06-28 20:55:16.817 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:16.818 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:55:16.818 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 20:55:16.825 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:55:16.827 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 7.9893ms
+2025-06-28 20:55:16.827 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:55:16.827 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115317 - 200 null application/json; charset=utf-8 10.8606ms
+2025-06-28 20:55:18.955 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 20:55:18.956 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:18.956 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 0.8882ms
+2025-06-28 20:55:18.959 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 172
+2025-06-28 20:55:18.959 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:18.960 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-28 20:55:18.960 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-28 20:55:18.961 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 401 0 null 1.5103ms
+2025-06-28 20:55:49.229 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - null null
+2025-06-28 20:55:49.233 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:49.234 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - 204 null null 5.3618ms
+2025-06-28 20:55:49.238 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 50
+2025-06-28 20:55:49.238 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:49.239 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:55:49.240 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-28 20:55:49.281 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-28 20:55:49.401 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-28 20:55:49.404 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:55:49.405 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 164.881ms
+2025-06-28 20:55:49.405 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:55:49.405 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 167.1404ms
+2025-06-28 20:55:54.616 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:55:54.617 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:55:54.618 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:55:54.618 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:55:54.621 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:55:54.623 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:55:54.624 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 5.6032ms
+2025-06-28 20:55:54.624 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:55:54.624 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 7.6246ms
+2025-06-28 20:56:35.256 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115395 - null null
+2025-06-28 20:56:35.258 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:56:35.258 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115395 - 204 null null 2.5098ms
+2025-06-28 20:56:35.260 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115395 - application/json null
+2025-06-28 20:56:35.261 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:56:35.262 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:56:35.263 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 20:56:35.265 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:56:35.268 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 3.8319ms
+2025-06-28 20:56:35.270 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 20:56:35.270 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115395 - 200 null application/json; charset=utf-8 9.3887ms
+2025-06-28 20:56:37.796 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 20:56:37.797 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:56:37.810 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 13.5113ms
+2025-06-28 20:56:37.813 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 173
+2025-06-28 20:56:37.813 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:56:37.814 +08:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|BusinessOwner)
+2025-06-28 20:56:37.814 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-28 20:56:37.815 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 401 0 null 1.836ms
+2025-06-28 20:57:36.726 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 63
+2025-06-28 20:57:36.729 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:57:36.731 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-28 20:57:36.961 +08:00 [INF] Executed DbCommand (213ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-28 20:57:37.050 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-28 20:57:37.051 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:57:37.052 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 320.8278ms
+2025-06-28 20:57:37.052 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-28 20:57:37.052 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 326.4864ms
+2025-06-28 20:58:01.796 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/User/me - text/plain 63
+2025-06-28 20:58:01.888 +08:00 [INF] Executing endpoint 'UserController.GetCurrentUser (BraveHeartBackend)'
+2025-06-28 20:58:01.898 +08:00 [INF] Route matched with {action = "GetCurrentUser", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUser() on controller UserController (BraveHeartBackend).
+2025-06-28 20:58:01.938 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-28 20:58:01.940 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-28 20:58:01.941 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`3[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IList`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 20:58:01.945 +08:00 [INF] Executed action UserController.GetCurrentUser (BraveHeartBackend) in 46.4646ms
+2025-06-28 20:58:01.946 +08:00 [INF] Executed endpoint 'UserController.GetCurrentUser (BraveHeartBackend)'
+2025-06-28 20:58:01.946 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/User/me - 200 null application/json; charset=utf-8 150.1808ms
+2025-06-28 20:59:32.452 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-28 20:59:32.454 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:59:32.455 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 2.8237ms
+2025-06-28 20:59:32.457 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/ProductType - application/json 86
+2025-06-28 20:59:32.457 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:59:32.465 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-28 20:59:32.476 +08:00 [INF] Route matched with {action = "Create", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]] Create(BraveHeartBackend.DTOs.ProductType.CreateProductTypeDTO) on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:59:32.598 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductTypes" ("Name")
+VALUES (@p0)
+RETURNING "Id";
+2025-06-28 20:59:32.613 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductAttributes" ("DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (@p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-28 20:59:32.628 +08:00 [INF] Executing CreatedAtActionResult, writing value of type 'BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto'.
+2025-06-28 20:59:32.642 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend) in 166.1635ms
+2025-06-28 20:59:32.642 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.Create (BraveHeartBackend)'
+2025-06-28 20:59:32.643 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/ProductType - 201 null application/json; charset=utf-8 185.9812ms
+2025-06-28 20:59:40.112 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 20:59:40.112 +08:00 [INF] CORS policy execution successful.
+2025-06-28 20:59:40.112 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:59:40.112 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 20:59:40.141 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 20:59:40.142 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 20:59:40.142 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 29.5174ms
+2025-06-28 20:59:40.142 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 20:59:40.142 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 30.8161ms
+2025-06-28 21:00:47.133 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 21:00:47.140 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:00:47.141 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:00:47.142 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 21:00:47.233 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 21:00:47.235 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:00:47.241 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 99.1353ms
+2025-06-28 21:00:47.245 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:00:47.248 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 115.7562ms
+2025-06-28 21:01:00.262 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 21:01:00.265 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:01:00.266 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:01:00.266 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 21:01:00.283 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 21:01:00.287 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:01:00.289 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 22.7534ms
+2025-06-28 21:01:00.290 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:01:00.290 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 28.5671ms
+2025-06-28 21:01:36.048 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115696 - null null
+2025-06-28 21:01:36.049 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:01:36.050 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751115696 - 204 null null 2.2136ms
+2025-06-28 21:01:36.052 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115696 - application/json null
+2025-06-28 21:01:36.052 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:01:36.053 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 21:01:36.054 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 21:01:36.070 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 21:01:36.071 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 16.6429ms
+2025-06-28 21:01:36.071 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 21:01:36.071 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751115696 - 200 null application/json; charset=utf-8 19.3037ms
+2025-06-28 21:08:43.959 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-28 21:08:43.971 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:08:43.978 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:08:43.986 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-28 21:08:45.010 +08:00 [INF] Executed DbCommand (847ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-28 21:08:45.013 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:08:45.014 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 973.0411ms
+2025-06-28 21:08:45.014 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-28 21:08:45.015 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 1056.1234ms
+2025-06-28 21:09:01.963 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751116142 - null null
+2025-06-28 21:09:01.970 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:09:01.983 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Cloudinary/signature?timestamp=1751116142 - 204 null null 20.1017ms
+2025-06-28 21:09:01.988 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751116142 - application/json null
+2025-06-28 21:09:01.988 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:09:01.989 +08:00 [INF] Executing endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 21:09:01.991 +08:00 [INF] Route matched with {action = "GetSignature", controller = "Cloudinary", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSignature() on controller CloudinaryController (BraveHeartBackend).
+2025-06-28 21:09:01.994 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-28 21:09:02.018 +08:00 [INF] Executed action CloudinaryController.GetSignature (BraveHeartBackend) in 26.9168ms
+2025-06-28 21:09:02.018 +08:00 [INF] Executed endpoint 'CloudinaryController.GetSignature (BraveHeartBackend)'
+2025-06-28 21:09:02.018 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Cloudinary/signature?timestamp=1751116142 - 200 null application/json; charset=utf-8 30.7583ms
+2025-06-28 21:09:04.200 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 21:09:04.200 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:09:04.200 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 0.5632ms
+2025-06-28 21:09:04.203 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/Product - application/json 170
+2025-06-28 21:09:04.203 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:09:04.208 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.Create (BraveHeartBackend)'
+2025-06-28 21:09:04.223 +08:00 [INF] Route matched with {action = "Create", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BraveHeartBackend.DTOs.Product.ProductCreateDTO) on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:09:04.283 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-28 21:09:04.312 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__dto_ProductTypeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ProductTypes" AS p
+    WHERE p."Id" = @__dto_ProductTypeId_0)
+2025-06-28 21:09:04.319 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__dto_ProductTypeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."DataType", p."IsRequired", p."Name", p."ProductTypeId"
+FROM "ProductAttributes" AS p
+WHERE p."ProductTypeId" = @__dto_ProductTypeId_0 AND p."IsRequired"
+2025-06-28 21:09:04.363 +08:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?', @p1='?' (DbType = Decimal), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Products" ("ImageUrl", "Price", "ProductTypeId", "Stock")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2025-06-28 21:09:04.366 +08:00 [INF] Executing CreatedAtActionResult, writing value of type 'BraveHeartBackend.DTOs.Product.ProductResponseDto'.
+2025-06-28 21:09:04.368 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.Create (BraveHeartBackend) in 144.255ms
+2025-06-28 21:09:04.368 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.Create (BraveHeartBackend)'
+2025-06-28 21:09:04.368 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/Product - 201 null application/json; charset=utf-8 165.2793ms
+2025-06-28 21:14:49.805 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 21:14:49.867 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:14:49.872 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 68.8081ms
+2025-06-28 21:14:49.976 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-28 21:14:49.981 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:14:50.003 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:14:50.150 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:14:50.426 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-28 21:14:50.459 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:14:50.463 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 312.4587ms
+2025-06-28 21:14:50.463 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:14:50.464 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 487.5196ms
+2025-06-28 21:16:01.628 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 21:16:01.632 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:16:01.636 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 7.1461ms
+2025-06-28 21:16:01.647 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-28 21:16:01.652 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:16:01.691 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:01.707 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:16:01.766 +08:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-28 21:16:01.772 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:16:01.774 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 66.7509ms
+2025-06-28 21:16:01.774 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:01.775 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 127.7956ms
+2025-06-28 21:16:05.271 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-28 21:16:05.368 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:16:05.375 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:05.377 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:16:05.398 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-28 21:16:05.401 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:16:05.404 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 26.256ms
+2025-06-28 21:16:05.404 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:05.404 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 133.805ms
+2025-06-28 21:16:36.279 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 21:16:36.281 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:16:36.282 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 4.0015ms
+2025-06-28 21:16:36.289 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-28 21:16:36.291 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:16:36.296 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:36.296 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:16:36.313 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-28 21:16:36.320 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:16:36.320 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 23.3655ms
+2025-06-28 21:16:36.320 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:16:36.322 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 33.0253ms
+2025-06-28 21:17:50.781 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-28 21:17:50.810 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:17:50.817 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 34.9979ms
+2025-06-28 21:17:51.070 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-28 21:17:51.073 +08:00 [INF] CORS policy execution successful.
+2025-06-28 21:17:51.103 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:17:51.106 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-28 21:17:52.125 +08:00 [INF] Executed DbCommand (902ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-28 21:17:52.130 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-28 21:17:52.143 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 936.1831ms
+2025-06-28 21:17:52.143 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-28 21:17:52.146 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 1073.9459ms

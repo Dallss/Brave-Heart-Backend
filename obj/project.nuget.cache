@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cn3rQ4uLSsY=",
+  "dgSpecHash": "/5FqrQVbTJ0=",
   "success": true,
   "projectFilePath": "/Users/dallsszz/BraveHeartBackend/BraveHeartBackend.csproj",
   "expectedPackageFiles": [
+    "/Users/dallsszz/.nuget/packages/cloudinarydotnet/1.27.6/cloudinarydotnet.1.27.6.nupkg.sha512",
     "/Users/dallsszz/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/Users/dallsszz/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/dallsszz/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

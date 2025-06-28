@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "BraveHeartBackend/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.27.6",
           "DotNetEnv": "3.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.6",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.6",
@@ -27,6 +28,19 @@
         },
         "runtime": {
           "BraveHeartBackend.dll": {}
+        }
+      },
+      "CloudinaryDotNet/1.27.6": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.Net.Http": "4.3.4",
+          "System.Text.RegularExpressions": "4.3.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.27.6.0",
+            "fileVersion": "1.27.6.0"
+          }
         }
       },
       "DotNetEnv/3.1.1": {
@@ -3380,6 +3394,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CloudinaryDotNet/1.27.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oMb6wsbbb3DkereP6pIcVVUHbuMSPvEmH/brqN4zz647iFg6bRnhS442+fQr9ACYwfK0lXJlMamzQLV2e6MbiA==",
+      "path": "cloudinarydotnet/1.27.6",
+      "hashPath": "cloudinarydotnet.1.27.6.nupkg.sha512"
     },
     "DotNetEnv/3.1.1": {
       "type": "package",

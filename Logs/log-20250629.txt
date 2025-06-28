@@ -1,0 +1,839 @@
+2025-06-29 00:00:51.655 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-29 00:00:51.859 +08:00 [INF] CORS policy execution successful.
+2025-06-29 00:00:51.861 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 205.9749ms
+2025-06-29 00:00:51.864 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-29 00:00:51.879 +08:00 [INF] CORS policy execution successful.
+2025-06-29 00:00:51.981 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 4:00:51 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 00:00:52.098 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 4:00:51 pm'.
+2025-06-29 00:00:52.098 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 00:00:52.102 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 00:00:52.270 +08:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 00:00:52.274 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 00:00:52.322 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 214.0786ms
+2025-06-29 00:00:52.322 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 00:00:52.323 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 458.4177ms
+2025-06-29 00:22:07.231 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-29 00:22:07.232 +08:00 [INF] CORS policy execution successful.
+2025-06-29 00:22:07.235 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 3.8073ms
+2025-06-29 00:22:07.246 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-29 00:22:07.250 +08:00 [INF] CORS policy execution successful.
+2025-06-29 00:22:07.272 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 4:22:07 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 00:22:07.287 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 4:22:07 pm'.
+2025-06-29 00:22:07.288 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 00:22:07.289 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 00:22:07.867 +08:00 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 00:22:07.901 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 00:22:07.909 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 619.3239ms
+2025-06-29 00:22:07.909 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 00:22:07.910 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 663.8321ms
+2025-06-29 01:20:49.143 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/Product - null null
+2025-06-29 01:20:49.150 +08:00 [INF] CORS policy execution successful.
+2025-06-29 01:20:49.152 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/Product - 204 null null 9.8555ms
+2025-06-29 01:20:49.234 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-29 01:20:49.238 +08:00 [INF] CORS policy execution successful.
+2025-06-29 01:20:49.274 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 5:20:49 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 01:20:49.412 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:55:49 pm', Current time (UTC): '28/6/2025 5:20:49 pm'.
+2025-06-29 01:20:49.413 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 01:20:49.416 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 01:20:50.059 +08:00 [INF] Executed DbCommand (620ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 01:20:50.060 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 01:20:50.061 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 637.5399ms
+2025-06-29 01:20:50.061 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 01:20:50.062 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 827.4448ms
+2025-06-29 02:06:46.595 +08:00 [INF] Application is shutting down...
+2025-06-29 02:06:57.905 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 02:07:00.074 +08:00 [INF] Executed DbCommand (169ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 02:07:00.418 +08:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 02:07:00.473 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 02:07:00.541 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 02:07:00.864 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 02:07:00.868 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 02:07:00.868 +08:00 [INF] Hosting environment: Development
+2025-06-29 02:07:00.868 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 02:07:08.874 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - null null
+2025-06-29 02:07:08.906 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 02:07:08.907 +08:00 [INF] CORS policy execution successful.
+2025-06-29 02:07:08.913 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/User/login - 204 null null 41.349ms
+2025-06-29 02:07:08.919 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/User/login - application/json 50
+2025-06-29 02:07:08.922 +08:00 [INF] CORS policy execution successful.
+2025-06-29 02:07:08.946 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 02:07:08.960 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 02:07:09.036 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 02:07:09.146 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 02:07:09.169 +08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-29 02:07:09.176 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 213.83ms
+2025-06-29 02:07:09.177 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 02:07:09.180 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/User/login - 200 null application/json; charset=utf-8 261.3989ms
+2025-06-29 02:07:18.370 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 02:07:18.383 +08:00 [INF] CORS policy execution successful.
+2025-06-29 02:07:18.385 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 02:07:18.391 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 02:07:18.462 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-29 02:07:18.485 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 02:07:18.491 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 100.1346ms
+2025-06-29 02:07:18.491 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 02:07:18.492 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 122.2276ms
+2025-06-29 02:12:46.296 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - application/json 317
+2025-06-29 02:12:46.369 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:12:46 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 02:12:46.389 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:12:46 pm'.
+2025-06-29 02:12:46.390 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:12:46.399 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 02:12:46.477 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 02:12:46.497 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 02:12:46.499 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 99.5802ms
+2025-06-29 02:12:46.499 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:12:46.499 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 203.9293ms
+2025-06-29 02:18:22.973 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - application/json 317
+2025-06-29 02:18:22.988 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:18:22 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 02:18:22.993 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:18:22 pm'.
+2025-06-29 02:18:22.994 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:18:22.997 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 02:18:23.052 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 02:18:23.055 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 02:18:23.055 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 57.5606ms
+2025-06-29 02:18:23.055 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:18:23.056 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 82.3219ms
+2025-06-29 02:18:46.682 +08:00 [INF] Application is shutting down...
+2025-06-29 02:18:59.429 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-29 02:18:59.879 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-29 02:18:59.895 +08:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-29 02:18:59.899 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-29 02:18:59.900 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-29 02:18:59.929 +08:00 [INF] Applying migration '20250628181845_AddProductName'.
+2025-06-29 02:18:59.989 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Products" ADD "Name" character varying(200) NOT NULL DEFAULT '';
+2025-06-29 02:18:59.991 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250628181845_AddProductName', '9.0.6');
+2025-06-29 02:19:26.063 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 02:19:27.105 +08:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 02:19:27.161 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 02:19:27.192 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 02:19:27.210 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 02:19:27.256 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 02:19:27.257 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 02:19:27.257 +08:00 [INF] Hosting environment: Development
+2025-06-29 02:19:27.257 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 02:19:34.273 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - application/json 317
+2025-06-29 02:19:34.310 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 02:19:34.366 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:19:34 pm'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 02:19:34.375 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 1:57:37 pm', Current time (UTC): '28/6/2025 6:19:34 pm'.
+2025-06-29 02:19:34.377 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:19:34.388 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 02:19:34.486 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Name", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 02:19:34.514 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 02:19:34.537 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 146.9885ms
+2025-06-29 02:19:34.540 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 02:19:34.544 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 272.8215ms
+2025-06-29 02:53:38.012 +08:00 [INF] Application is shutting down...
+2025-06-29 03:32:57.218 +08:00 [INF] Executed DbCommand (270ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE braveheartdb WITH (FORCE);
+2025-06-29 03:33:07.084 +08:00 [ERR] An error occurred using the connection to database 'braveheartdb' on server 'tcp://localhost:5432'.
+2025-06-29 03:33:36.250 +08:00 [ERR] An error occurred using the connection to database 'braveheartdb' on server 'tcp://localhost:5432'.
+2025-06-29 03:33:38.066 +08:00 [INF] Executed DbCommand (1,235ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE braveheartdb;
+2025-06-29 03:33:38.317 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-29 03:33:38.331 +08:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-29 03:33:38.336 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-29 03:33:38.341 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-29 03:33:38.363 +08:00 [INF] Applying migration '20250620073447_InitialCreate'.
+2025-06-29 03:33:38.428 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ApplicationUser" (
+    "Id" text NOT NULL,
+    "UserName" text,
+    "NormalizedUserName" text,
+    "Email" text,
+    "NormalizedEmail" text,
+    "EmailConfirmed" boolean NOT NULL,
+    "PasswordHash" text,
+    "SecurityStamp" text,
+    "ConcurrencyStamp" text,
+    "PhoneNumber" text,
+    "PhoneNumberConfirmed" boolean NOT NULL,
+    "TwoFactorEnabled" boolean NOT NULL,
+    "LockoutEnd" timestamp with time zone,
+    "LockoutEnabled" boolean NOT NULL,
+    "AccessFailedCount" integer NOT NULL,
+    CONSTRAINT "PK_ApplicationUser" PRIMARY KEY ("Id")
+);
+2025-06-29 03:33:38.437 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ProductTypes" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Name" text NOT NULL,
+    CONSTRAINT "PK_ProductTypes" PRIMARY KEY ("Id")
+);
+2025-06-29 03:33:38.448 +08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Carts" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "UserId" text NOT NULL,
+    CONSTRAINT "PK_Carts" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Carts_ApplicationUser_UserId" FOREIGN KEY ("UserId") REFERENCES "ApplicationUser" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.465 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "CheckoutDetails" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Email" text NOT NULL,
+    "PhoneNumber" text NOT NULL,
+    "AddressLine1" text NOT NULL,
+    "AddressLine2" text NOT NULL,
+    "City" text NOT NULL,
+    "State" text NOT NULL,
+    "PostalCode" text NOT NULL,
+    "Country" text NOT NULL,
+    "UserId" text NOT NULL,
+    CONSTRAINT "PK_CheckoutDetails" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_CheckoutDetails_ApplicationUser_UserId" FOREIGN KEY ("UserId") REFERENCES "ApplicationUser" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.474 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ProductAttributes" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Name" text NOT NULL,
+    "DataType" text NOT NULL,
+    "ProductTypeId" integer NOT NULL,
+    CONSTRAINT "PK_ProductAttributes" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_ProductAttributes_ProductTypes_ProductTypeId" FOREIGN KEY ("ProductTypeId") REFERENCES "ProductTypes" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.495 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Price" numeric NOT NULL,
+    "Stock" integer NOT NULL,
+    "ProductTypeId" integer NOT NULL,
+    CONSTRAINT "PK_Products" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Products_ProductTypes_ProductTypeId" FOREIGN KEY ("ProductTypeId") REFERENCES "ProductTypes" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.505 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "CartItems" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "CartId" integer NOT NULL,
+    "ProductId" integer NOT NULL,
+    "Quantity" integer NOT NULL,
+    CONSTRAINT "PK_CartItems" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_CartItems_Carts_CartId" FOREIGN KEY ("CartId") REFERENCES "Carts" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_CartItems_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.517 +08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ProductAttributeValues" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "Value" text NOT NULL,
+    "ProductId" integer NOT NULL,
+    "ProductAttributeId" integer NOT NULL,
+    CONSTRAINT "PK_ProductAttributeValues" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_ProductAttributeValues_ProductAttributes_ProductAttributeId" FOREIGN KEY ("ProductAttributeId") REFERENCES "ProductAttributes" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_ProductAttributeValues_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.564 +08:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CartItems_CartId" ON "CartItems" ("CartId");
+2025-06-29 03:33:38.570 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CartItems_ProductId" ON "CartItems" ("ProductId");
+2025-06-29 03:33:38.576 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Carts_UserId" ON "Carts" ("UserId");
+2025-06-29 03:33:38.581 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CheckoutDetails_UserId" ON "CheckoutDetails" ("UserId");
+2025-06-29 03:33:38.589 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ProductAttributes_ProductTypeId" ON "ProductAttributes" ("ProductTypeId");
+2025-06-29 03:33:38.595 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ProductAttributeValues_ProductAttributeId" ON "ProductAttributeValues" ("ProductAttributeId");
+2025-06-29 03:33:38.600 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_ProductAttributeValues_ProductId" ON "ProductAttributeValues" ("ProductId");
+2025-06-29 03:33:38.604 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Products_ProductTypeId" ON "Products" ("ProductTypeId");
+2025-06-29 03:33:38.606 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250620073447_InitialCreate', '9.0.6');
+2025-06-29 03:33:38.606 +08:00 [INF] Applying migration '20250620164701_AddIdentityTables'.
+2025-06-29 03:33:38.676 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Carts" DROP CONSTRAINT "FK_Carts_ApplicationUser_UserId";
+2025-06-29 03:33:38.678 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CheckoutDetails" DROP CONSTRAINT "FK_CheckoutDetails_ApplicationUser_UserId";
+2025-06-29 03:33:38.679 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "ApplicationUser" DROP CONSTRAINT "PK_ApplicationUser";
+2025-06-29 03:33:38.680 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "ApplicationUser" RENAME TO "AspNetUsers";
+2025-06-29 03:33:38.687 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ALTER COLUMN "UserName" TYPE character varying(256);
+2025-06-29 03:33:38.692 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ALTER COLUMN "NormalizedUserName" TYPE character varying(256);
+2025-06-29 03:33:38.698 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ALTER COLUMN "NormalizedEmail" TYPE character varying(256);
+2025-06-29 03:33:38.703 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ALTER COLUMN "Email" TYPE character varying(256);
+2025-06-29 03:33:38.707 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ADD CONSTRAINT "PK_AspNetUsers" PRIMARY KEY ("Id");
+2025-06-29 03:33:38.734 +08:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" text NOT NULL,
+    "Name" character varying(256),
+    "NormalizedName" character varying(256),
+    "ConcurrencyStamp" text,
+    CONSTRAINT "PK_AspNetRoles" PRIMARY KEY ("Id")
+);
+2025-06-29 03:33:38.820 +08:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "UserId" text NOT NULL,
+    "ClaimType" text,
+    "ClaimValue" text,
+    CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.852 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" character varying(128) NOT NULL,
+    "ProviderKey" character varying(128) NOT NULL,
+    "ProviderDisplayName" text,
+    "UserId" text NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.877 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" text NOT NULL,
+    "LoginProvider" character varying(128) NOT NULL,
+    "Name" character varying(128) NOT NULL,
+    "Value" text,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.885 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "RoleId" text NOT NULL,
+    "ClaimType" text,
+    "ClaimValue" text,
+    CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.906 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" text NOT NULL,
+    "RoleId" text NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2025-06-29 03:33:38.938 +08:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2025-06-29 03:33:38.941 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2025-06-29 03:33:38.945 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2025-06-29 03:33:38.947 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2025-06-29 03:33:38.949 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2025-06-29 03:33:38.951 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2025-06-29 03:33:38.955 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2025-06-29 03:33:38.961 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Carts" ADD CONSTRAINT "FK_Carts_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE;
+2025-06-29 03:33:38.965 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CheckoutDetails" ADD CONSTRAINT "FK_CheckoutDetails_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE;
+2025-06-29 03:33:38.967 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250620164701_AddIdentityTables', '9.0.6');
+2025-06-29 03:33:38.967 +08:00 [INF] Applying migration '20250620172930_AddUserTypeToApplicationUser'.
+2025-06-29 03:33:38.991 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" ADD "UserType" text NOT NULL DEFAULT '';
+2025-06-29 03:33:38.993 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250620172930_AddUserTypeToApplicationUser', '9.0.6');
+2025-06-29 03:33:38.993 +08:00 [INF] Applying migration '20250621123833_integratesCartEntityIntoUserAsField'.
+2025-06-29 03:33:39.037 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CartItems" DROP CONSTRAINT "FK_CartItems_Carts_CartId";
+2025-06-29 03:33:39.059 +08:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE "Carts";
+2025-06-29 03:33:39.061 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX "IX_CartItems_CartId";
+2025-06-29 03:33:39.062 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CartItems" DROP COLUMN "CartId";
+2025-06-29 03:33:39.084 +08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CartItems" ADD "UserId" text NOT NULL DEFAULT '';
+2025-06-29 03:33:39.087 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CartItems_UserId" ON "CartItems" ("UserId");
+2025-06-29 03:33:39.091 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "CartItems" ADD CONSTRAINT "FK_CartItems_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE;
+2025-06-29 03:33:39.092 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250621123833_integratesCartEntityIntoUserAsField', '9.0.6');
+2025-06-29 03:33:39.092 +08:00 [INF] Applying migration '20250621183718_productRequireType'.
+2025-06-29 03:33:39.119 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250621183718_productRequireType', '9.0.6');
+2025-06-29 03:33:39.119 +08:00 [INF] Applying migration '20250621184902_productModelCleanup'.
+2025-06-29 03:33:39.149 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250621184902_productModelCleanup', '9.0.6');
+2025-06-29 03:33:39.149 +08:00 [INF] Applying migration '20250621190140_productModelCleanup2'.
+2025-06-29 03:33:39.179 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250621190140_productModelCleanup2', '9.0.6');
+2025-06-29 03:33:39.180 +08:00 [INF] Applying migration '20250623161500_removesUserTypeInUserModel'.
+2025-06-29 03:33:39.231 +08:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "AspNetUsers" DROP COLUMN "UserType";
+2025-06-29 03:33:39.233 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250623161500_removesUserTypeInUserModel', '9.0.6');
+2025-06-29 03:33:39.234 +08:00 [INF] Applying migration '20250623213424_addsIsRequireedForAttributes'.
+2025-06-29 03:33:39.251 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "ProductAttributes" ADD "IsRequired" boolean NOT NULL DEFAULT FALSE;
+2025-06-29 03:33:39.251 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250623213424_addsIsRequireedForAttributes', '9.0.6');
+2025-06-29 03:33:39.252 +08:00 [INF] Applying migration '20250626175308_AddProductImageUrl'.
+2025-06-29 03:33:39.270 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Products" ADD "ImageUrl" text;
+2025-06-29 03:33:39.271 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250626175308_AddProductImageUrl', '9.0.6');
+2025-06-29 03:33:39.272 +08:00 [INF] Applying migration '20250628181845_AddProductName'.
+2025-06-29 03:33:39.289 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Products" ADD "Name" character varying(200) NOT NULL DEFAULT '';
+2025-06-29 03:33:39.290 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250628181845_AddProductName', '9.0.6');
+2025-06-29 03:33:39.291 +08:00 [INF] Applying migration '20250628193324_SeedData'.
+2025-06-29 03:33:39.341 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductTypes" ("Id", "Name")
+VALUES (1, 'Electronics');
+INSERT INTO "ProductTypes" ("Id", "Name")
+VALUES (2, 'Fire Safety Equipment');
+INSERT INTO "ProductTypes" ("Id", "Name")
+VALUES (3, 'Clothing');
+2025-06-29 03:33:39.346 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (1, 'string', TRUE, 'Color', 1);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (2, 'string', TRUE, 'Storage', 1);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (3, 'string', TRUE, 'Brand', 1);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (4, 'string', TRUE, 'ExtinguisherClass', 2);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (5, 'string', TRUE, 'Capacity', 2);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (6, 'string', FALSE, 'Material', 2);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (7, 'string', TRUE, 'Size', 3);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (8, 'string', TRUE, 'Material', 3);
+INSERT INTO "ProductAttributes" ("Id", "DataType", "IsRequired", "Name", "ProductTypeId")
+VALUES (9, 'string', TRUE, 'Color', 3);
+2025-06-29 03:33:39.351 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (1, 'https://example.com/iphone15.jpg', 'iPhone 15', 999.0, 1, 50);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (2, 'https://example.com/galaxy-s24.jpg', 'Samsung Galaxy S24', 899.0, 1, 30);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (3, 'https://example.com/macbook-pro.jpg', 'MacBook Pro', 1999.0, 1, 20);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (4, 'https://example.com/abc-extinguisher.jpg', 'ABC Fire Extinguisher', 89.99, 2, 100);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (5, 'https://example.com/co2-extinguisher.jpg', 'CO2 Fire Extinguisher', 149.99, 2, 75);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (6, 'https://example.com/fire-blanket.jpg', 'Fire Blanket', 29.99, 2, 200);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (7, 'https://example.com/firefighter-jacket.jpg', 'Firefighter Jacket', 299.99, 3, 25);
+INSERT INTO "Products" ("Id", "ImageUrl", "Name", "Price", "ProductTypeId", "Stock")
+VALUES (8, 'https://example.com/safety-helmet.jpg', 'Safety Helmet', 89.99, 3, 60);
+2025-06-29 03:33:39.358 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (1, 1, 1, 'Black');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (2, 1, 1, 'White');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (3, 2, 1, '128GB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (4, 2, 1, '256GB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (5, 3, 1, 'Apple');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (6, 1, 2, 'Black');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (7, 1, 2, 'Blue');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (8, 2, 2, '128GB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (9, 2, 2, '512GB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (10, 3, 2, 'Samsung');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (11, 1, 3, 'Space Gray');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (12, 1, 3, 'Silver');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (13, 2, 3, '512GB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (14, 2, 3, '1TB');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (15, 3, 3, 'Apple');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (16, 4, 4, 'ABC');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (17, 5, 4, '5 lbs');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (18, 5, 4, '10 lbs');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (19, 6, 4, 'Steel');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (20, 4, 5, 'CO2');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (21, 5, 5, '10 lbs');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (22, 6, 5, 'Aluminum');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (23, 4, 6, 'N/A');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (24, 5, 6, '4ft x 6ft');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (25, 6, 6, 'Fiberglass');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (26, 7, 7, 'Large');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (27, 7, 7, 'XL');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (28, 8, 7, 'Nomex');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (29, 9, 7, 'Yellow');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (30, 9, 7, 'Orange');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (31, 7, 8, 'Medium');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (32, 7, 8, 'Large');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (33, 8, 8, 'ABS Plastic');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (34, 9, 8, 'White');
+INSERT INTO "ProductAttributeValues" ("Id", "ProductAttributeId", "ProductId", "Value")
+VALUES (35, 9, 8, 'Yellow');
+2025-06-29 03:33:39.368 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT setval(
+    pg_get_serial_sequence('"ProductTypes"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "ProductTypes") + 1,
+        nextval(pg_get_serial_sequence('"ProductTypes"', 'Id'))),
+    false);
+SELECT setval(
+    pg_get_serial_sequence('"ProductAttributes"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "ProductAttributes") + 1,
+        nextval(pg_get_serial_sequence('"ProductAttributes"', 'Id'))),
+    false);
+SELECT setval(
+    pg_get_serial_sequence('"Products"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "Products") + 1,
+        nextval(pg_get_serial_sequence('"Products"', 'Id'))),
+    false);
+SELECT setval(
+    pg_get_serial_sequence('"ProductAttributeValues"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "ProductAttributeValues") + 1,
+        nextval(pg_get_serial_sequence('"ProductAttributeValues"', 'Id'))),
+    false);
+2025-06-29 03:33:39.371 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250628193324_SeedData', '9.0.6');
+2025-06-29 03:34:03.066 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 03:34:05.095 +08:00 [INF] Executed DbCommand (68ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 03:34:05.139 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 03:34:05.284 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-29 03:34:05.312 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 03:34:05.427 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 03:34:05.492 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?' (DbType = Boolean), @p14='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-06-29 03:34:05.505 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 03:34:05.540 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 03:34:05.544 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 03:34:05.557 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 03:34:05.587 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?', @p1='?', @p16='?', @p2='?' (DbType = Int32), @p3='?', @p17='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+VALUES (@p0, @p1);
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p2, "ConcurrencyStamp" = @p3, "Email" = @p4, "EmailConfirmed" = @p5, "LockoutEnabled" = @p6, "LockoutEnd" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 03:34:05.669 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 03:34:05.671 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 03:34:05.672 +08:00 [INF] Hosting environment: Development
+2025-06-29 03:34:05.672 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 03:34:13.265 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/ - null null
+2025-06-29 03:34:13.370 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 03:34:13.441 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/ - 404 0 null 178.7355ms
+2025-06-29 03:34:13.452 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5185/, Response status code: 404
+2025-06-29 03:34:18.156 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/index.html - null null
+2025-06-29 03:34:18.279 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/index.html - 200 null text/html;charset=utf-8 123.934ms
+2025-06-29 03:34:18.368 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui.css - null null
+2025-06-29 03:34:18.368 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui-bundle.js - null null
+2025-06-29 03:34:18.369 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/index.css - null null
+2025-06-29 03:34:18.378 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-29 03:34:18.379 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/index.js - null null
+2025-06-29 03:34:18.380 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/index.js - 200 null application/javascript;charset=utf-8 1.3265ms
+2025-06-29 03:34:18.385 +08:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-29 03:34:18.386 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/index.css - 200 202 text/css 16.8415ms
+2025-06-29 03:34:18.394 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-29 03:34:18.394 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-29 03:34:18.397 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui.css - 200 154949 text/css 29.0915ms
+2025-06-29 03:34:18.397 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 19.2828ms
+2025-06-29 03:34:18.400 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-29 03:34:18.401 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 33.071ms
+2025-06-29 03:34:18.751 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/v1/swagger.json - null null
+2025-06-29 03:34:18.792 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/favicon-32x32.png - null null
+2025-06-29 03:34:18.793 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-29 03:34:18.793 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/favicon-32x32.png - 200 628 image/png 1.1544ms
+2025-06-29 03:34:18.886 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.6545ms
+2025-06-29 03:34:31.850 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-29 03:34:31.880 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 03:34:31.907 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 03:34:32.159 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Name", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+2025-06-29 03:34:32.233 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 03:34:32.271 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 359.1796ms
+2025-06-29 03:34:32.272 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 03:34:32.280 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 430.2814ms
+2025-06-29 03:35:31.156 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 03:35:31.204 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 03:35:31.221 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 03:35:31.373 +08:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."DataType", p0."IsRequired", p0."Name", p0."ProductTypeId"
+FROM "ProductTypes" AS p
+LEFT JOIN "ProductAttributes" AS p0 ON p."Id" = p0."ProductTypeId"
+ORDER BY p."Id"
+2025-06-29 03:35:31.397 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 03:35:31.406 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 184.2789ms
+2025-06-29 03:35:31.406 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 03:35:31.407 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 251.2211ms
+2025-06-29 04:19:52.742 +08:00 [INF] Application is shutting down...
+2025-06-29 04:20:08.818 +08:00 [INF] User profile is available. Using '/Users/dallsszz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-29 04:20:10.108 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-06-29 04:20:10.169 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 04:20:10.200 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-06-29 04:20:10.218 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."RoleId"
+FROM "AspNetUserRoles" AS a
+WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+LIMIT 1
+2025-06-29 04:20:10.269 +08:00 [INF] Now listening on: http://localhost:5185
+2025-06-29 04:20:10.271 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-29 04:20:10.271 +08:00 [INF] Hosting environment: Development
+2025-06-29 04:20:10.271 +08:00 [INF] Content root path: /Users/dallsszz/BraveHeartBackend
+2025-06-29 04:20:13.953 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/index.html - null null
+2025-06-29 04:20:14.026 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/index.html - 200 null text/html;charset=utf-8 74.1941ms
+2025-06-29 04:20:14.348 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/swagger/v1/swagger.json - null null
+2025-06-29 04:20:14.425 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 77.6163ms
+2025-06-29 04:20:24.144 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/Product - null null
+2025-06-29 04:20:24.166 +08:00 [WRN] Failed to determine the https port for redirect.
+2025-06-29 04:20:24.209 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:24.226 +08:00 [INF] Route matched with {action = "GetAll", controller = "Product", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller BraveHeartBackend.Controllers.ProductController (BraveHeartBackend).
+2025-06-29 04:20:24.360 +08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-29 04:20:24.406 +08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."ImageUrl", p."Name", p."Price", p."ProductTypeId", p."Stock", p0."Id", p0."Name", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "Products" AS p
+INNER JOIN "ProductTypes" AS p0 ON p."ProductTypeId" = p0."Id"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p0."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:20:24.455 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.Product, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.Product.ProductResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:20:24.478 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend) in 249.4967ms
+2025-06-29 04:20:24.478 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:24.483 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/Product - 200 null application/json; charset=utf-8 339.092ms
+2025-06-29 04:20:51.010 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:20:51.020 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:51.050 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:20:51.088 +08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-29 04:20:51.105 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:20:51.114 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:20:51.118 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 68.3028ms
+2025-06-29 04:20:51.118 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:51.119 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 109.3042ms
+2025-06-29 04:20:52.684 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 04:20:52.690 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:52.690 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 04:20:52.696 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 04:20:52.699 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 04:20:52.700 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 9.785ms
+2025-06-29 04:20:52.700 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 04:20:52.700 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 16.8197ms

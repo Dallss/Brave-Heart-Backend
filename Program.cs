@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Serilog;
+using CloudinaryDotNet;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,6 +70,18 @@ builder.Services.AddCors(options =>
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials());
+});
+
+// Register CloudinaryService
+builder.Services.AddSingleton<CloudinaryService>(sp =>
+{
+    var config = new CloudinaryConfig
+    {
+        CloudName = Environment.GetEnvironmentVariable("CLOUDINARY_CLOUD_NAME")!,
+        ApiKey = Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY")!,
+        ApiSecret = Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")!
+    };
+    return new CloudinaryService(config);
 });
 
 // Configure Serilog for logging
@@ -145,4 +158,11 @@ async Task CreateAdminAccount(WebApplication app)
         await userManager.AddToRoleAsync(adminUser, adminRole);
         Console.WriteLine($"ℹ️ Admin role assigned to existing user: {adminEmail}");
     }
+}
+
+public class CloudinaryConfig
+{
+    public string CloudName { get; set; } = string.Empty;
+    public string ApiKey { get; set; } = string.Empty;
+    public string ApiSecret { get; set; } = string.Empty;
 }

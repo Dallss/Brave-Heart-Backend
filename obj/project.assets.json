@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "CloudinaryDotNet/1.27.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.Net.Http": "4.3.4",
+          "System.Text.RegularExpressions": "4.3.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CloudinaryDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CloudinaryDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "DotNetEnv/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -5402,6 +5420,25 @@
     }
   },
   "libraries": {
+    "CloudinaryDotNet/1.27.6": {
+      "sha512": "oMb6wsbbb3DkereP6pIcVVUHbuMSPvEmH/brqN4zz647iFg6bRnhS442+fQr9ACYwfK0lXJlMamzQLV2e6MbiA==",
+      "type": "package",
+      "path": "cloudinarydotnet/1.27.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CloudinaryIcon.png",
+        "README.md",
+        "cloudinarydotnet.1.27.6.nupkg.sha512",
+        "cloudinarydotnet.nuspec",
+        "lib/net452/CloudinaryDotNet.dll",
+        "lib/net452/CloudinaryDotNet.xml",
+        "lib/netstandard1.3/CloudinaryDotNet.dll",
+        "lib/netstandard1.3/CloudinaryDotNet.xml",
+        "lib/netstandard2.0/CloudinaryDotNet.dll",
+        "lib/netstandard2.0/CloudinaryDotNet.xml"
+      ]
+    },
     "DotNetEnv/3.1.1": {
       "sha512": "o4SqUVCq0pqHF/HYsZk6k22XGIVmvsDVo+Dy7l0ubq9uQ45JkXswrMRJmYvhGLXWFYF0M5OupMonytB+0zvpGQ==",
       "type": "package",
@@ -14654,6 +14691,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "CloudinaryDotNet >= 1.27.6",
       "DotNetEnv >= 3.1.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.6",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.6",
@@ -14715,6 +14753,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "CloudinaryDotNet": {
+            "target": "Package",
+            "version": "[1.27.6, )"
+          },
           "DotNetEnv": {
             "target": "Package",
             "version": "[3.1.1, )"
