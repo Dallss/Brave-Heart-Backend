@@ -6,7 +6,8 @@ namespace BraveHeartBackend.Models
     {
         [Key]
         public int Id { get; set; }
-
+        
+        //rem
         [Required]
         [EmailAddress]
         public string Email { get; set; }

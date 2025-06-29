@@ -28,36 +28,19 @@ namespace BraveHeartBackend.Controllers
         public async Task<ActionResult<IEnumerable<ProductTypeResponseDto>>> GetAll()
         {
             var types = await _context.ProductTypes
-                .Include(pt => pt.Products)
                 .Include(pt => pt.Attributes)
-                    .ThenInclude(attr => attr.Values)
                 .ToListAsync();
 
             var result = types.Select(pt => new ProductTypeResponseDto
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Products = pt.Products.Select(p => new ProductResponseDto
+                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDto
                 {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price,
-                    Stock = p.Stock,
-                    ImageUrl = p.ImageUrl,
-                    Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDto
-                    {
-                        Id = attr.Id,
-                        Name = attr.Name,
-                        DataType = attr.DataType,
-                        IsRequired = attr.IsRequired,
-                        Values = attr.Values
-                            .Where(v => v.ProductId == p.Id)
-                            .Select(v => new ProductAttributeValueResponseDto
-                            {
-                                Id = v.Id,
-                                Value = v.Value
-                            }).ToList()
-                    }).ToList()
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired
                 }).ToList()
             });
 
@@ -69,9 +52,7 @@ namespace BraveHeartBackend.Controllers
         public async Task<ActionResult<ProductTypeResponseDto>> GetById(int id)
         {
             var pt = await _context.ProductTypes
-                .Include(pt => pt.Products)
                 .Include(pt => pt.Attributes)
-                    .ThenInclude(attr => attr.Values)
                 .FirstOrDefaultAsync(pt => pt.Id == id);
 
             if (pt == null) return NotFound();
@@ -80,27 +61,12 @@ namespace BraveHeartBackend.Controllers
             {
                 Id = pt.Id,
                 Name = pt.Name,
-                Products = pt.Products.Select(p => new ProductResponseDto
+                Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDto
                 {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price,
-                    Stock = p.Stock,
-                    ImageUrl = p.ImageUrl,
-                    Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDto
-                    {
-                        Id = attr.Id,
-                        Name = attr.Name,
-                        DataType = attr.DataType,
-                        IsRequired = attr.IsRequired,
-                        Values = attr.Values
-                            .Where(v => v.ProductId == p.Id)
-                            .Select(v => new ProductAttributeValueResponseDto
-                            {
-                                Id = v.Id,
-                                Value = v.Value
-                            }).ToList()
-                    }).ToList()
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired
                 }).ToList()
             };
 

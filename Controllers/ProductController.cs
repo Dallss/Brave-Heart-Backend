@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using BraveHeartBackend.Data;
 using BraveHeartBackend.DTOs.Product;
 using BraveHeartBackend.DTOs.ProductAttribute;
+using BraveHeartBackend.DTOs.ProductType;
 
 namespace BraveHeartBackend.Controllers
 {
@@ -94,6 +95,47 @@ namespace BraveHeartBackend.Controllers
                         }).ToList()
                 }).ToList()
             };
+
+            return Ok(result);
+        }
+
+        // GET: api/Product/by-type
+        [HttpGet("by-type")]
+        public async Task<ActionResult<IEnumerable<ProductTypeResponseDto>>> GetAllByType()
+        {
+            var types = await _context.ProductTypes
+                .Include(pt => pt.Products)
+                .Include(pt => pt.Attributes)
+                    .ThenInclude(attr => attr.Values)
+                .ToListAsync();
+
+            var result = types.Select(pt => new ProductTypeResponseDto
+            {
+                Id = pt.Id,
+                Name = pt.Name,
+                Products = pt.Products.Select(p => new ProductResponseDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    Stock = p.Stock,
+                    ImageUrl = p.ImageUrl,
+                    Attributes = pt.Attributes.Select(attr => new ProductAttributeResponseDto
+                    {
+                        Id = attr.Id,
+                        Name = attr.Name,
+                        DataType = attr.DataType,
+                        IsRequired = attr.IsRequired,
+                        Values = attr.Values
+                            .Where(v => v.ProductId == p.Id)
+                            .Select(v => new ProductAttributeValueResponseDto
+                            {
+                                Id = v.Id,
+                                Value = v.Value
+                            }).ToList()
+                    }).ToList()
+                }).ToList()
+            });
 
             return Ok(result);
         }

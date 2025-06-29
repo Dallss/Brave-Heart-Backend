@@ -1656,3 +1656,377 @@ ORDER BY p."Id", p0."Id", s."Id"
 2025-06-29 05:30:11.039 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 10.528ms
 2025-06-29 05:30:11.039 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
 2025-06-29 05:30:11.039 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 12.9869ms
+2025-06-29 05:31:16.171 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:16.173 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:16.175 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 4.6407ms
+2025-06-29 05:31:16.177 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:16.178 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:16.180 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:16.181 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:16.188 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:16.197 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:16.210 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 29.2414ms
+2025-06-29 05:31:16.210 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:16.211 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 34.0342ms
+2025-06-29 05:31:19.626 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:19.627 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:19.628 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:19.628 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:19.631 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:19.634 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:19.634 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 5.9036ms
+2025-06-29 05:31:19.634 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:19.635 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 8.1576ms
+2025-06-29 05:31:23.368 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:23.368 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:23.368 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 0.6478ms
+2025-06-29 05:31:23.370 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:23.371 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:23.371 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:23.372 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:23.374 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:23.377 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:23.377 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 5.5327ms
+2025-06-29 05:31:23.377 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:23.378 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 7.1558ms
+2025-06-29 05:31:27.983 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:27.984 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:27.985 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:27.985 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:27.989 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:27.991 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:27.992 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 6.7874ms
+2025-06-29 05:31:27.992 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:27.992 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 9.2567ms
+2025-06-29 05:31:32.445 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:32.446 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:32.446 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 0.8481ms
+2025-06-29 05:31:32.448 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:32.449 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:32.449 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:32.449 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:32.452 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:32.455 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:32.456 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 6.2107ms
+2025-06-29 05:31:32.456 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:32.456 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 7.5888ms
+2025-06-29 05:31:42.040 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:42.042 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:42.042 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 2.053ms
+2025-06-29 05:31:42.045 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 05:31:42.046 +08:00 [INF] CORS policy execution successful.
+2025-06-29 05:31:42.048 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:42.048 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 05:31:42.068 +08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 05:31:42.073 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 05:31:42.073 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 24.5407ms
+2025-06-29 05:31:42.073 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 05:31:42.074 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 28.885ms
+2025-06-29 17:06:18.827 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 17:06:18.836 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:18.850 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 23.2786ms
+2025-06-29 17:06:18.852 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 68
+2025-06-29 17:06:18.853 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:18.891 +08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 10:30:07 pm', Current time (UTC): '29/6/2025 9:06:18 am'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-29 17:06:18.938 +08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '28/6/2025 10:30:07 pm', Current time (UTC): '29/6/2025 9:06:18 am'.
+2025-06-29 17:06:18.940 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 17:06:18.943 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 17:06:19.024 +08:00 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 17:06:19.100 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 17:06:19.102 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 17:06:19.114 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 17:06:19.115 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 17:06:19.116 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 173.0948ms
+2025-06-29 17:06:19.116 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 17:06:19.116 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 264.2439ms
+2025-06-29 17:06:22.839 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:06:22.840 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:22.840 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 0.8013ms
+2025-06-29 17:06:22.843 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:06:22.843 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:22.844 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:06:22.844 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:06:22.862 +08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:06:22.865 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:06:22.865 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 20.5931ms
+2025-06-29 17:06:22.865 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:06:22.865 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 22.6283ms
+2025-06-29 17:06:24.615 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:06:24.616 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:24.617 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:06:24.617 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:06:24.621 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:06:24.623 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:06:24.624 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 6.3084ms
+2025-06-29 17:06:24.624 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:06:24.624 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 8.6388ms
+2025-06-29 17:06:53.944 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/revoke-token - null null
+2025-06-29 17:06:53.950 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:53.952 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/revoke-token - 204 null null 7.3819ms
+2025-06-29 17:06:53.954 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - null 0
+2025-06-29 17:06:53.955 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:06:53.965 +08:00 [INF] Executing endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 17:06:53.966 +08:00 [INF] Route matched with {action = "RevokeToken", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RevokeToken() on controller UserController (BraveHeartBackend).
+2025-06-29 17:06:53.997 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-29 17:06:54.000 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 17:06:54.007 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 17:06:54.007 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-29 17:06:54.008 +08:00 [INF] Executed action UserController.RevokeToken (BraveHeartBackend) in 41.1105ms
+2025-06-29 17:06:54.008 +08:00 [INF] Executed endpoint 'UserController.RevokeToken (BraveHeartBackend)'
+2025-06-29 17:06:54.008 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/revoke-token - 200 null text/plain; charset=utf-8 53.7784ms
+2025-06-29 17:07:04.870 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - null null
+2025-06-29 17:07:04.872 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:07:04.872 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/user/login - 204 null null 2.6983ms
+2025-06-29 17:07:04.876 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5185/api/user/login - application/json 69
+2025-06-29 17:07:04.877 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:07:04.878 +08:00 [INF] Executing endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 17:07:04.879 +08:00 [INF] Route matched with {action = "Login", controller = "User", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BraveHeartBackend.DTOs.User.LoginDTO) on controller UserController (BraveHeartBackend).
+2025-06-29 17:07:04.908 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-06-29 17:07:04.980 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-06-29 17:07:04.982 +08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."RefreshToken", a."RefreshTokenExpiryTime", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-06-29 17:07:05.009 +08:00 [INF] Executed DbCommand (24ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?', @p17='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = DateTime), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "NormalizedEmail" = @p6, "NormalizedUserName" = @p7, "PasswordHash" = @p8, "PhoneNumber" = @p9, "PhoneNumberConfirmed" = @p10, "RefreshToken" = @p11, "RefreshTokenExpiryTime" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2025-06-29 17:07:05.010 +08:00 [INF] Executing OkObjectResult, writing value of type 'BraveHeartBackend.DTOs.User.TokenResponseDTO'.
+2025-06-29 17:07:05.011 +08:00 [INF] Executed action UserController.Login (BraveHeartBackend) in 130.6017ms
+2025-06-29 17:07:05.011 +08:00 [INF] Executed endpoint 'UserController.Login (BraveHeartBackend)'
+2025-06-29 17:07:05.011 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5185/api/user/login - 200 null application/json; charset=utf-8 134.5692ms
+2025-06-29 17:12:01.359 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:12:01.379 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:12:01.381 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 22.124ms
+2025-06-29 17:12:01.404 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:12:01.405 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:12:01.409 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:12:01.418 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:12:01.461 +08:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:12:01.469 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:12:01.470 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 51.7454ms
+2025-06-29 17:12:01.470 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:12:01.470 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 66.6558ms
+2025-06-29 17:13:35.075 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:13:35.077 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:13:35.077 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 2.2668ms
+2025-06-29 17:13:35.079 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:13:35.080 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:13:35.084 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:13:35.086 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:13:35.120 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:13:35.126 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:13:35.128 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 41.6644ms
+2025-06-29 17:13:35.128 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:13:35.128 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 48.8287ms
+2025-06-29 17:31:52.439 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:31:52.442 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:31:52.451 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 3.7926ms
+2025-06-29 17:31:52.454 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:31:52.455 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:31:52.460 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:31:52.463 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:31:52.697 +08:00 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:31:52.702 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:31:52.703 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 217.8217ms
+2025-06-29 17:31:52.703 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:31:52.703 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 249.858ms
+2025-06-29 17:35:35.768 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:35:35.772 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:35:35.773 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 5.1092ms
+2025-06-29 17:35:35.774 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:35:35.775 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:35:35.779 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:35:35.780 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:35:35.854 +08:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:35:35.864 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:35:35.866 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 85.3918ms
+2025-06-29 17:35:35.866 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:35:35.866 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 92.0069ms
+2025-06-29 17:35:59.772 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:35:59.773 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:35:59.774 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 1.6062ms
+2025-06-29 17:35:59.776 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:35:59.776 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:35:59.777 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:35:59.777 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:35:59.781 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:35:59.787 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:35:59.788 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 10.426ms
+2025-06-29 17:35:59.788 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:35:59.788 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 12.5364ms
+2025-06-29 17:42:32.148 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - null null
+2025-06-29 17:42:32.150 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:42:32.151 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5185/api/ProductType - 204 null null 3.2632ms
+2025-06-29 17:42:32.157 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5185/api/ProductType - null null
+2025-06-29 17:42:32.158 +08:00 [INF] CORS policy execution successful.
+2025-06-29 17:42:32.164 +08:00 [INF] Executing endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:42:32.166 +08:00 [INF] Route matched with {action = "GetAll", controller = "ProductType", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto]]] GetAll() on controller BraveHeartBackend.Controllers.ProductTypeController (BraveHeartBackend).
+2025-06-29 17:42:32.429 +08:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Name", p0."Id", p0."ImageUrl", p0."Name", p0."Price", p0."ProductTypeId", p0."Stock", s."Id", s."DataType", s."IsRequired", s."Name", s."ProductTypeId", s."Id0", s."ProductAttributeId", s."ProductId", s."Value"
+FROM "ProductTypes" AS p
+LEFT JOIN "Products" AS p0 ON p."Id" = p0."ProductTypeId"
+LEFT JOIN (
+    SELECT p1."Id", p1."DataType", p1."IsRequired", p1."Name", p1."ProductTypeId", p2."Id" AS "Id0", p2."ProductAttributeId", p2."ProductId", p2."Value"
+    FROM "ProductAttributes" AS p1
+    LEFT JOIN "ProductAttributeValues" AS p2 ON p1."Id" = p2."ProductAttributeId"
+) AS s ON p."Id" = s."ProductTypeId"
+ORDER BY p."Id", p0."Id", s."Id"
+2025-06-29 17:42:32.435 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BraveHeartBackend.Models.ProductType, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BraveHeartBackend.DTOs.ProductType.ProductTypeResponseDto, BraveHeartBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-29 17:42:32.438 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 258.2335ms
+2025-06-29 17:42:32.438 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
+2025-06-29 17:42:32.439 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5185/api/ProductType - 200 null application/json; charset=utf-8 282.1091ms
