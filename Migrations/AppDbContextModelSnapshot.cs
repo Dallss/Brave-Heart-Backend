@@ -205,74 +205,38 @@ namespace BraveHeartBackend.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "https://example.com/iphone15.jpg",
-                            Name = "iPhone 15",
-                            Price = 999.00m,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823422/dry-chemical_t0rp88.png",
+                            Name = "Dry Chemical (ABC)",
+                            Price = 0m,
                             ProductTypeId = 1,
-                            Stock = 50
+                            Stock = 0
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "https://example.com/galaxy-s24.jpg",
-                            Name = "Samsung Galaxy S24",
-                            Price = 899.00m,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823357/c02_zlry7d.png",
+                            Name = "Carbon Dioxide (CO₂)",
+                            Price = 0m,
                             ProductTypeId = 1,
-                            Stock = 30
+                            Stock = 0
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "https://example.com/macbook-pro.jpg",
-                            Name = "MacBook Pro",
-                            Price = 1999.00m,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823434/foam_ixdviw.png",
+                            Name = "Foam",
+                            Price = 0m,
                             ProductTypeId = 1,
-                            Stock = 20
+                            Stock = 0
                         },
                         new
                         {
                             Id = 4,
-                            ImageUrl = "https://example.com/abc-extinguisher.jpg",
-                            Name = "ABC Fire Extinguisher",
-                            Price = 89.99m,
-                            ProductTypeId = 2,
-                            Stock = 100
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ImageUrl = "https://example.com/co2-extinguisher.jpg",
-                            Name = "CO2 Fire Extinguisher",
-                            Price = 149.99m,
-                            ProductTypeId = 2,
-                            Stock = 75
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ImageUrl = "https://example.com/fire-blanket.jpg",
-                            Name = "Fire Blanket",
-                            Price = 29.99m,
-                            ProductTypeId = 2,
-                            Stock = 200
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ImageUrl = "https://example.com/firefighter-jacket.jpg",
-                            Name = "Firefighter Jacket",
-                            Price = 299.99m,
-                            ProductTypeId = 3,
-                            Stock = 25
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ImageUrl = "https://example.com/safety-helmet.jpg",
-                            Name = "Safety Helmet",
-                            Price = 89.99m,
-                            ProductTypeId = 3,
-                            Stock = 60
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823365/halon_nowrpt.png",
+                            Name = "Halon Substitute",
+                            Price = 0m,
+                            ProductTypeId = 1,
+                            Stock = 0
                         });
                 });
 
@@ -310,7 +274,7 @@ namespace BraveHeartBackend.Migrations
                             Id = 1,
                             DataType = "string",
                             IsRequired = true,
-                            Name = "Color",
+                            Name = "Color band",
                             ProductTypeId = 1
                         },
                         new
@@ -318,7 +282,7 @@ namespace BraveHeartBackend.Migrations
                             Id = 2,
                             DataType = "string",
                             IsRequired = true,
-                            Name = "Storage",
+                            Name = "Extinguishing agent",
                             ProductTypeId = 1
                         },
                         new
@@ -326,56 +290,8 @@ namespace BraveHeartBackend.Migrations
                             Id = 3,
                             DataType = "string",
                             IsRequired = true,
-                            Name = "Brand",
+                            Name = "Use",
                             ProductTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "ExtinguisherClass",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Capacity",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            DataType = "string",
-                            IsRequired = false,
-                            Name = "Material",
-                            ProductTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Size",
-                            ProductTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 8,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Material",
-                            ProductTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 9,
-                            DataType = "string",
-                            IsRequired = true,
-                            Name = "Color",
-                            ProductTypeId = 3
                         });
                 });
 
@@ -411,245 +327,84 @@ namespace BraveHeartBackend.Migrations
                             Id = 1,
                             ProductAttributeId = 1,
                             ProductId = 1,
-                            Value = "Black"
+                            Value = "White band on a red body"
                         },
                         new
                         {
                             Id = 2,
-                            ProductAttributeId = 1,
+                            ProductAttributeId = 2,
                             ProductId = 1,
-                            Value = "White"
+                            Value = "Multipurpose dry chemical"
                         },
                         new
                         {
                             Id = 3,
-                            ProductAttributeId = 2,
+                            ProductAttributeId = 3,
                             ProductId = 1,
-                            Value = "128GB"
+                            Value = "Effective on Class A (solids like wood/paper), B (flammable liquids/gases), and C (electrical) fires"
                         },
                         new
                         {
                             Id = 4,
-                            ProductAttributeId = 2,
-                            ProductId = 1,
-                            Value = "256GB"
+                            ProductAttributeId = 1,
+                            ProductId = 2,
+                            Value = "Black band on a red body"
                         },
                         new
                         {
                             Id = 5,
-                            ProductAttributeId = 3,
-                            ProductId = 1,
-                            Value = "Apple"
+                            ProductAttributeId = 2,
+                            ProductId = 2,
+                            Value = "Carbon dioxide gas"
                         },
                         new
                         {
                             Id = 6,
-                            ProductAttributeId = 1,
+                            ProductAttributeId = 3,
                             ProductId = 2,
-                            Value = "Black"
+                            Value = "Ideal for Class B (flammable liquids) and Class C (electrical) fires—leaves no residue, safe for equipment"
                         },
                         new
                         {
                             Id = 7,
                             ProductAttributeId = 1,
-                            ProductId = 2,
-                            Value = "Blue"
+                            ProductId = 3,
+                            Value = "Blue band on a red body"
                         },
                         new
                         {
                             Id = 8,
                             ProductAttributeId = 2,
-                            ProductId = 2,
-                            Value = "128GB"
+                            ProductId = 3,
+                            Value = "Aqueous film-forming foam"
                         },
                         new
                         {
                             Id = 9,
-                            ProductAttributeId = 2,
-                            ProductId = 2,
-                            Value = "512GB"
+                            ProductAttributeId = 3,
+                            ProductId = 3,
+                            Value = "Suitable for Class A (solids) and B (liquids) fires—forms a foam blanket to suppress vapors"
                         },
                         new
                         {
                             Id = 10,
-                            ProductAttributeId = 3,
-                            ProductId = 2,
-                            Value = "Samsung"
+                            ProductAttributeId = 1,
+                            ProductId = 4,
+                            Value = "White band on a light green body"
                         },
                         new
                         {
                             Id = 11,
-                            ProductAttributeId = 1,
-                            ProductId = 3,
-                            Value = "Space Gray"
+                            ProductAttributeId = 2,
+                            ProductId = 4,
+                            Value = "Halon-replacement gases (such as FM-200 or similar clean agents)"
                         },
                         new
                         {
                             Id = 12,
-                            ProductAttributeId = 1,
-                            ProductId = 3,
-                            Value = "Silver"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ProductAttributeId = 2,
-                            ProductId = 3,
-                            Value = "512GB"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ProductAttributeId = 2,
-                            ProductId = 3,
-                            Value = "1TB"
-                        },
-                        new
-                        {
-                            Id = 15,
                             ProductAttributeId = 3,
-                            ProductId = 3,
-                            Value = "Apple"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ProductAttributeId = 4,
                             ProductId = 4,
-                            Value = "ABC"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ProductAttributeId = 5,
-                            ProductId = 4,
-                            Value = "5 lbs"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ProductAttributeId = 5,
-                            ProductId = 4,
-                            Value = "10 lbs"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ProductAttributeId = 6,
-                            ProductId = 4,
-                            Value = "Steel"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ProductAttributeId = 4,
-                            ProductId = 5,
-                            Value = "CO2"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ProductAttributeId = 5,
-                            ProductId = 5,
-                            Value = "10 lbs"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ProductAttributeId = 6,
-                            ProductId = 5,
-                            Value = "Aluminum"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ProductAttributeId = 4,
-                            ProductId = 6,
-                            Value = "N/A"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ProductAttributeId = 5,
-                            ProductId = 6,
-                            Value = "4ft x 6ft"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ProductAttributeId = 6,
-                            ProductId = 6,
-                            Value = "Fiberglass"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ProductAttributeId = 7,
-                            ProductId = 7,
-                            Value = "Large"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            ProductAttributeId = 7,
-                            ProductId = 7,
-                            Value = "XL"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            ProductAttributeId = 8,
-                            ProductId = 7,
-                            Value = "Nomex"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            ProductAttributeId = 9,
-                            ProductId = 7,
-                            Value = "Yellow"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            ProductAttributeId = 9,
-                            ProductId = 7,
-                            Value = "Orange"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            ProductAttributeId = 7,
-                            ProductId = 8,
-                            Value = "Medium"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            ProductAttributeId = 7,
-                            ProductId = 8,
-                            Value = "Large"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            ProductAttributeId = 8,
-                            ProductId = 8,
-                            Value = "ABS Plastic"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            ProductAttributeId = 9,
-                            ProductId = 8,
-                            Value = "White"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            ProductAttributeId = 9,
-                            ProductId = 8,
-                            Value = "Yellow"
+                            Value = "Designed for Class A, B, and C fires—non-corrosive and leaves minimal residue"
                         });
                 });
 
@@ -673,17 +428,7 @@ namespace BraveHeartBackend.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Electronics"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Fire Safety Equipment"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Clothing"
+                            Name = "Fire Extinguisher"
                         });
                 });
 

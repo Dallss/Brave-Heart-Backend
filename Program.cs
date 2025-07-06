@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Load environment variables from .env
 if (builder.Environment.IsDevelopment())
 {
-    DotNetEnv.Env.Load();
+    DotNetEnv.Env.Load(".env.development");
 }
 
 
@@ -25,7 +25,7 @@ string dbPort = Environment.GetEnvironmentVariable("DB_PORT")!;
 string dbName = Environment.GetEnvironmentVariable("DB_NAME")!;
 string dbUser = Environment.GetEnvironmentVariable("DB_USER")!;
 string dbPass = Environment.GetEnvironmentVariable("DB_PASS")!;
-string sslMode = Environment.GetEnvironmentVariable("DB_SSL_MODE") ?? "Require";
+string sslMode = Environment.GetEnvironmentVariable("DB_SSL_MODE") ?? "Disable";
 
 Console.WriteLine($"🧪 Connecting to DB at {dbHost}:{dbPort}");
 
@@ -75,14 +75,28 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<JwtService>();
 
 // Add CORS policy
-builder.Services.AddCors(options =>
+if (builder.Environment.IsDevelopment())
 {
-    options.AddPolicy("AllowFrontend",
-        policy => policy.WithOrigins("http://localhost:5173")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials());
-});
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowFrontend",
+            policy => policy.AllowAnyOrigin()
+                              .AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowCredentials());
+    });
+}
+else
+{
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowFrontend",
+            policy => policy.WithOrigins("https://dallss.github.io/")
+                              .AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowCredentials());
+    });
+}
 
 // Register CloudinaryService
 builder.Services.AddSingleton<CloudinaryService>(sp =>
@@ -124,7 +138,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Create Admin account on startup
-// await CreateAdminAccount(app);
+await CreateAdminAccount(app);
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Urls.Add($"http://*:{port}");
@@ -137,8 +151,8 @@ async Task CreateAdminAccount(WebApplication app)
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    string adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") ?? "admin@example.com";
-    string adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") ?? "Admin123!";
+    string adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") ?? "admin@braveheart.com";
+    string adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") ?? "BraveheartAdmin123!";
     string adminRole = "Admin";
 
     if (!await roleManager.RoleExistsAsync(adminRole))

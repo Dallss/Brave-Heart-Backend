@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BraveHeartBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250623213424_addsIsRequireedForAttributes")]
-    partial class addsIsRequireedForAttributes
+    [Migration("20250706203558_InitialClean")]
+    partial class InitialClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,6 +66,12 @@ namespace BraveHeartBackend.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
@@ -175,6 +181,14 @@ namespace BraveHeartBackend.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
@@ -189,6 +203,44 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823422/dry-chemical_t0rp88.png",
+                            Name = "Dry Chemical (ABC)",
+                            Price = 0m,
+                            ProductTypeId = 1,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823357/c02_zlry7d.png",
+                            Name = "Carbon Dioxide (CO₂)",
+                            Price = 0m,
+                            ProductTypeId = 1,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823434/foam_ixdviw.png",
+                            Name = "Foam",
+                            Price = 0m,
+                            ProductTypeId = 1,
+                            Stock = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ImageUrl = "https://res.cloudinary.com/braveheartimages/image/upload/v1751823365/halon_nowrpt.png",
+                            Name = "Halon Substitute",
+                            Price = 0m,
+                            ProductTypeId = 1,
+                            Stock = 0
+                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductAttribute", b =>
@@ -218,6 +270,32 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("ProductAttributes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DataType = "string",
+                            IsRequired = true,
+                            Name = "Color band",
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DataType = "string",
+                            IsRequired = true,
+                            Name = "Extinguishing agent",
+                            ProductTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DataType = "string",
+                            IsRequired = true,
+                            Name = "Use",
+                            ProductTypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductAttributeValue", b =>
@@ -245,6 +323,92 @@ namespace BraveHeartBackend.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductAttributeValues");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ProductAttributeId = 1,
+                            ProductId = 1,
+                            Value = "White band on a red body"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ProductAttributeId = 2,
+                            ProductId = 1,
+                            Value = "Multipurpose dry chemical"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ProductAttributeId = 3,
+                            ProductId = 1,
+                            Value = "Effective on Class A (solids like wood/paper), B (flammable liquids/gases), and C (electrical) fires"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ProductAttributeId = 1,
+                            ProductId = 2,
+                            Value = "Black band on a red body"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ProductAttributeId = 2,
+                            ProductId = 2,
+                            Value = "Carbon dioxide gas"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ProductAttributeId = 3,
+                            ProductId = 2,
+                            Value = "Ideal for Class B (flammable liquids) and Class C (electrical) fires—leaves no residue, safe for equipment"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ProductAttributeId = 1,
+                            ProductId = 3,
+                            Value = "Blue band on a red body"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ProductAttributeId = 2,
+                            ProductId = 3,
+                            Value = "Aqueous film-forming foam"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ProductAttributeId = 3,
+                            ProductId = 3,
+                            Value = "Suitable for Class A (solids) and B (liquids) fires—forms a foam blanket to suppress vapors"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ProductAttributeId = 1,
+                            ProductId = 4,
+                            Value = "White band on a light green body"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ProductAttributeId = 2,
+                            ProductId = 4,
+                            Value = "Halon-replacement gases (such as FM-200 or similar clean agents)"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ProductAttributeId = 3,
+                            ProductId = 4,
+                            Value = "Designed for Class A, B, and C fires—non-corrosive and leaves minimal residue"
+                        });
                 });
 
             modelBuilder.Entity("BraveHeartBackend.Models.ProductType", b =>
@@ -262,6 +426,13 @@ namespace BraveHeartBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Fire Extinguisher"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -433,7 +604,7 @@ namespace BraveHeartBackend.Migrations
             modelBuilder.Entity("BraveHeartBackend.Models.Product", b =>
                 {
                     b.HasOne("BraveHeartBackend.Models.ProductType", "ProductType")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("ProductTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -455,7 +626,7 @@ namespace BraveHeartBackend.Migrations
             modelBuilder.Entity("BraveHeartBackend.Models.ProductAttributeValue", b =>
                 {
                     b.HasOne("BraveHeartBackend.Models.ProductAttribute", "ProductAttribute")
-                        .WithMany()
+                        .WithMany("Values")
                         .HasForeignKey("ProductAttributeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -529,9 +700,16 @@ namespace BraveHeartBackend.Migrations
                     b.Navigation("CheckoutDetails");
                 });
 
+            modelBuilder.Entity("BraveHeartBackend.Models.ProductAttribute", b =>
+                {
+                    b.Navigation("Values");
+                });
+
             modelBuilder.Entity("BraveHeartBackend.Models.ProductType", b =>
                 {
                     b.Navigation("Attributes");
+
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
