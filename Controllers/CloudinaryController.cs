@@ -12,9 +12,9 @@ public class CloudinaryController : ControllerBase
     }
 
     [HttpGet("signature")]
-    public IActionResult GetSignature()
+    public IActionResult GetSignature([FromQuery] string? folder = null)
     {
-        var (signature, timestamp, apiKey, cloudName) = _cloudinaryService.GenerateUploadSignature();
+        var (signature, timestamp, apiKey, cloudName) = _cloudinaryService.GenerateUploadSignature(folder);
         return Ok(new { signature, timestamp, apiKey, cloudName });
     }
 } 

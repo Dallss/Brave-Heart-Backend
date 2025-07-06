@@ -140,10 +140,32 @@ namespace BraveHeartBackend.Controllers
             return Ok(result);
         }
 
+        // GET: api/Product/{id}/attributes
+        [HttpGet("{id}/attributes")]
+        public async Task<IActionResult> GetProductAttributes(int id)
+        {
+            var product = await _context.Products
+                .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values.Where(v => v.ProductId == id))
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+                return NotFound();
+
+            // Return as key-value pairs where key is attribute name and value is the attribute value
+            var result = product.ProductType.Attributes.ToDictionary(
+                attr => attr.Name,
+                attr => attr.Values.FirstOrDefault(v => v.ProductId == id)?.Value ?? ""
+            );
+
+            return Ok(result);
+        }
+
         // POST: api/Product
         [HttpPost]
         [Authorize(Roles = "Admin,BusinessOwner")]
-        public async Task<IActionResult> Create([FromBody] ProductCreateDTO dto)
+        public async Task<IActionResult> Create([FromBody] ProductCreateDto dto)
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
@@ -239,22 +261,87 @@ namespace BraveHeartBackend.Controllers
         // PUT: api/Product/5
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin,BusinessOwner")]
-        public async Task<IActionResult> Update(int id, [FromBody] ProductCreateDTO dto)
+        public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products
+                .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values.Where(v => v.ProductId == id))
+                .FirstOrDefaultAsync(p => p.Id == id);
+
             if (product == null)
                 return NotFound();
 
-            product.Name = dto.Name;
-            product.Price = dto.Price;
-            product.Stock = dto.Stock;
-            product.ProductTypeId = dto.ProductTypeId;
-            product.ImageUrl = dto.ImageUrl;
+            // Update basic product properties (only if provided)
+            if (dto.Name != null) product.Name = dto.Name;
+            if (dto.Price.HasValue) product.Price = dto.Price.Value;
+            if (dto.Stock.HasValue) product.Stock = dto.Stock.Value;
+            if (dto.ImageUrl != null) product.ImageUrl = dto.ImageUrl;
+
+            // Update attribute values (only if provided)
+            if (dto.AttributeValues != null)
+            {
+                // Remove existing attribute values for this product
+                var existingValues = await _context.ProductAttributeValues
+                    .Where(v => v.ProductId == id)
+                    .ToListAsync();
+                _context.ProductAttributeValues.RemoveRange(existingValues);
+
+                // Add new attribute values
+                foreach (var attrValue in dto.AttributeValues)
+                {
+                    // Only save if value is not null/empty
+                    if (!string.IsNullOrWhiteSpace(attrValue.Value))
+                    {
+                        var pav = new ProductAttributeValue
+                        {
+                            ProductId = product.Id,
+                            ProductAttributeId = attrValue.ProductAttributeId,
+                            Value = attrValue.Value
+                        };
+                        _context.ProductAttributeValues.Add(pav);
+                    }
+                }
+            }
 
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            // Fetch the updated product with all its data for response
+            var updatedProduct = await _context.Products
+                .Include(p => p.ProductType)
+                .Include(p => p.ProductType.Attributes)
+                    .ThenInclude(attr => attr.Values)
+                .FirstOrDefaultAsync(p => p.Id == product.Id);
+
+            if (updatedProduct == null)
+                return NotFound();
+
+            var response = new ProductResponseDto
+            {
+                Id = updatedProduct.Id,
+                Name = updatedProduct.Name,
+                Price = updatedProduct.Price,
+                Stock = updatedProduct.Stock,
+                ImageUrl = updatedProduct.ImageUrl,
+                Attributes = updatedProduct.ProductType.Attributes.Select(attr => new ProductAttributeResponseDto
+                {
+                    Id = attr.Id,
+                    Name = attr.Name,
+                    DataType = attr.DataType,
+                    IsRequired = attr.IsRequired,
+                    Values = attr.Values
+                        .Where(v => v.ProductId == updatedProduct.Id)
+                        .Select(v => new ProductAttributeValueResponseDto
+                        {
+                            Id = v.Id,
+                            Value = v.Value
+                        }).ToList()
+                }).ToList()
+            };
+
+            return Ok(response);
         }
 
         // DELETE: api/Product/5

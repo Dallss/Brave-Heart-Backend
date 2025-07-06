@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BraveHeartBackend.DTOs.ProductAttributeValue
 {
-   public class ProductAttributeValueCreateDto
+   public class CreateProductAttributeValueDto
    {
       public int ProductAttributeId { get; set; }
       public string? Value { get; set; }

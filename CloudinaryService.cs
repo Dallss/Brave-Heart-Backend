@@ -13,13 +13,20 @@ public class CloudinaryService
         _cloudinary = new Cloudinary(new Account(config.CloudName, config.ApiKey, config.ApiSecret));
     }
 
-    public (string signature, string timestamp, string apiKey, string cloudName) GenerateUploadSignature()
+    public (string signature, string timestamp, string apiKey, string cloudName) GenerateUploadSignature(string? folder = null)
     {
         var timestamp = ((int)DateTimeOffset.UtcNow.ToUnixTimeSeconds()).ToString();
         var parameters = new SortedDictionary<string, object>
         {
             { "timestamp", timestamp }
         };
+        
+        // Add folder parameter if provided
+        if (!string.IsNullOrEmpty(folder))
+        {
+            parameters.Add("folder", folder);
+        }
+        
         var signature = _cloudinary.Api.SignParameters(parameters);
         return (signature, timestamp, _cloudinary.Api.Account.ApiKey, _cloudinary.Api.Account.Cloud);
     }

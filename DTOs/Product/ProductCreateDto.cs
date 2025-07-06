@@ -4,7 +4,7 @@ using BraveHeartBackend.DTOs.ProductAttributeValue;
 
 namespace BraveHeartBackend.DTOs.Product
 {
-    public class ProductCreateDTO
+    public class ProductCreateDto
     {
         [Required(ErrorMessage = "Product name is required.")]
         [StringLength(200, ErrorMessage = "Product name cannot exceed 200 characters.")]
@@ -18,6 +18,6 @@ namespace BraveHeartBackend.DTOs.Product
 
         public string? ImageUrl { get; set; }
         
-        public List<ProductAttributeValueCreateDto> AttributeValues { get; set; }
+        public List<CreateProductAttributeValueDto> AttributeValues { get; set; }
     }
 }
