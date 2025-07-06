@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: braveheartdb
+      POSTGRES_USER: dallsszz
+      POSTGRES_PASSWORD: a
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    image: brave-heart:dev
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: braveheartdb
+      DB_USER: dallsszz
+      DB_PASS: a
+    ports:
+      - "5000:80"
+    # Uncomment the following if your app needs to wait for db to be ready
+    # command: ["sh", "-c", "until pg_isready -h db -U dallsszz; do sleep 1; done; dotnet BraveHeartBackend.dll"]
+
+volumes:
+  db_data: 

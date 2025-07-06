@@ -1,0 +1,10 @@
+2025-07-04 02:58:05.329 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://db.bzqhogjmzpsaccjxeyju.supabase.co:5432'.
+2025-07-04 02:59:49.164 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://db.bzqhogjmzpsaccjxeyju.supabase.co:5432'.
+2025-07-04 04:26:00.823 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://db.bzqhogjmzpsaccjxeyju.supabase.co:5432'.
+2025-07-04 04:37:56.786 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://aws-0-ap-southeast-1.pooler.supabase.com:6435'.
+2025-07-04 04:38:59.637 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://aws-0-ap-southeast-1.pooler.supabase.com:6543'.
+2025-07-04 04:41:54.159 +08:00 [ERR] An error occurred using the connection to database 'postgres' on server 'tcp://aws-0-ap-southeast-1.pooler.supabase.com:6543'.
+2025-07-04 05:27:49.907 +08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";

@@ -8,6 +8,7 @@ using BraveHeartBackend.DTOs.User;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Google.Apis.Auth;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -153,5 +154,49 @@ public class UserController : ControllerBase
             user.Email,
             Roles = roles
         });
+    }
+
+    // Google Sign-In endpoint
+    [HttpPost("google-signin")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GoogleSignIn([FromBody] GoogleSignInDTO dto)
+    {
+        var googleClientId = _config["Google:ClientId"] ?? Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID");
+        if (string.IsNullOrEmpty(googleClientId))
+            return StatusCode(500, "Google ClientId not configured.");
+
+        GoogleJsonWebSignature.Payload payload;
+        try
+        {
+            payload = await GoogleJsonWebSignature.ValidateAsync(dto.IdToken, new GoogleJsonWebSignature.ValidationSettings
+            {
+                Audience = new[] { googleClientId }
+            });
+        }
+        catch
+        {
+            return Unauthorized("Invalid Google ID token.");
+        }
+
+        var user = await _userManager.FindByEmailAsync(payload.Email);
+        if (user == null)
+        {
+            user = new ApplicationUser
+            {
+                UserName = payload.Email,
+                Email = payload.Email,
+                EmailConfirmed = true
+            };
+            var result = await _userManager.CreateAsync(user);
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+            // Ensure Customer role exists
+            if (!await _roleManager.RoleExistsAsync("Customer"))
+                await _roleManager.CreateAsync(new IdentityRole("Customer"));
+            await _userManager.AddToRoleAsync(user, "Customer");
+        }
+        // Issue tokens
+        var tokenResponse = await _jwtService.GenerateTokensAsync(user);
+        return Ok(tokenResponse);
     }
 }

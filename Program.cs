@@ -13,15 +13,23 @@ using CloudinaryDotNet;
 var builder = WebApplication.CreateBuilder(args);
 
 // Load environment variables from .env
-Env.Load();
+if (builder.Environment.IsDevelopment())
+{
+    DotNetEnv.Env.Load();
+}
 
-// Get DB connection info from .env
-string dbHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
-string dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
-string dbName = Environment.GetEnvironmentVariable("DB_NAME") ?? "braveheartdb";
-string dbUser = Environment.GetEnvironmentVariable("DB_USER") ?? "dallsszz";
-string dbPass = Environment.GetEnvironmentVariable("DB_PASS") ?? "a";
-string dbConnStr = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPass}";
+
+// ✅ Use Cloud Run env vars, no fallback to localhost
+string dbHost = Environment.GetEnvironmentVariable("DB_HOST")!;
+string dbPort = Environment.GetEnvironmentVariable("DB_PORT")!;
+string dbName = Environment.GetEnvironmentVariable("DB_NAME")!;
+string dbUser = Environment.GetEnvironmentVariable("DB_USER")!;
+string dbPass = Environment.GetEnvironmentVariable("DB_PASS")!;
+string sslMode = Environment.GetEnvironmentVariable("DB_SSL_MODE") ?? "Require";
+
+Console.WriteLine($"🧪 Connecting to DB at {dbHost}:{dbPort}");
+
+string dbConnStr = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPass};SSL Mode={sslMode}";
 
 // Register PostgreSQL DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -102,11 +110,11 @@ builder.Host.UseSerilog();
 var app = builder.Build();
 
 // Swagger UI for dev
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+// }
 
 app.UseHttpsRedirection();
 app.UseCors("AllowFrontend"); // Enable CORS before authentication
@@ -116,7 +124,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Create Admin account on startup
-await CreateAdminAccount(app);
+// await CreateAdminAccount(app);
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://*:{port}");
 
 app.Run();
 
@@ -170,3 +181,6 @@ public class CloudinaryConfig
     public string ApiKey { get; set; } = string.Empty;
     public string ApiSecret { get; set; } = string.Empty;
 }
+
+// Add Google.Apis.Auth for Google Sign-In support
+// dotnet add package Google.Apis.Auth
