@@ -80,7 +80,7 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowFrontend",
-            policy => policy.AllowAnyOrigin()
+            policy => policy.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://localhost:5173", "http://localhost:8080")
                               .AllowAnyHeader()
                               .AllowAnyMethod()
                               .AllowCredentials());
