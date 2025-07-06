@@ -23,6 +23,14 @@ namespace BraveHeartBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Cascade delete: Deleting a ProductType deletes its Products
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.ProductType)
+                .WithMany(pt => pt.Products)
+                .HasForeignKey(p => p.ProductTypeId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             SeedData(modelBuilder);
         }
 
