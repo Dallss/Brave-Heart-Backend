@@ -28,13 +28,10 @@ string dbName = Environment.GetEnvironmentVariable("DB_NAME")!;
 string dbUser = Environment.GetEnvironmentVariable("DB_USER")!;
 string dbPass = Environment.GetEnvironmentVariable("DB_PASS")!;
 string sslMode = Environment.GetEnvironmentVariable("DB_SSL_MODE") ?? "Disable";
-string dbExtra = Environment.GetEnvironmentVariable("DB_EXTRA") ?? "";
 
 Console.WriteLine($"🧪 Connecting to DB at {dbHost}:{dbPort}");
 
 string dbConnStr = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPass};SSL Mode={sslMode}";
-if (!string.IsNullOrWhiteSpace(dbExtra))
-    dbConnStr += $";{dbExtra}";
 
 // Register PostgreSQL DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
