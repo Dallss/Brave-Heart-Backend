@@ -20,6 +20,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup .NET 9.0 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
       - name: Authenticate to GCP
         run: |
           echo "${{ secrets.GCP_SERVICE_KEY }}" | base64 -d > key.json
