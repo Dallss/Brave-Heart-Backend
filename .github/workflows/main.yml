@@ -36,6 +36,9 @@ jobs:
             -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop .
           docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop
 
+      - name: Build the project
+        run: dotnet build BraveHeartBackend.csproj
+
       - name: Run EF Core Migrations
         run: |
           dotnet tool install --global dotnet-ef
