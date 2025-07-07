@@ -17,24 +17,38 @@ jobs:
     environment:
       name: develop
     steps:
-      - name: 🧾 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🔐 Authenticate to GCP
+      - name: Authenticate to GCP
         run: |
           echo "${{ secrets.GCP_SERVICE_KEY }}" | base64 -d > key.json
           gcloud auth activate-service-account --key-file=key.json
           gcloud config set project $PROJECT_ID
 
-      - name: 🐳 Configure Docker for Artifact Registry
+      - name: Configure Docker for Artifact Registry
         run: gcloud auth configure-docker $REGION-docker.pkg.dev
 
-      - name: 🏗️ Build & Push Docker Image
+      - name: Build & Push Docker Image
         run: |
           docker build \
             --build-arg ASPNETCORE_ENVIRONMENT=Development \
             -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop .
           docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop
+
+      - name: Run EF Core Migrations
+        run: |
+          dotnet tool install --global dotnet-ef
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+          dotnet ef database update --project BraveHeartBackend.csproj
+        env:
+          DB_HOST: ${{ vars.DB_HOST }}
+          DB_PORT: ${{ vars.DB_PORT }}
+          DB_NAME: ${{ vars.DB_NAME }}
+          DB_USER: ${{ vars.DB_USER }}
+          DB_PASS: ${{ vars.DB_PASS }}
+          DB_SSL_MODE: require
+          ASPNETCORE_ENVIRONMENT: Development
 
       - name: 🚀 Deploy to Cloud Run
         run: |
