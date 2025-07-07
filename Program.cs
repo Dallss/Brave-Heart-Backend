@@ -93,7 +93,7 @@ else
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowFrontend",
-            policy => policy.WithOrigins("https://dallss.github.io/")
+            policy => policy.WithOrigins("https://dallss.github.io")
                               .AllowAnyHeader()
                               .AllowAnyMethod()
                               .AllowCredentials());
