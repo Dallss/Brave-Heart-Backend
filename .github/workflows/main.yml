@@ -3,7 +3,6 @@ name: Deploy BraveHeart Backend to Cloud Run
 on:
   push:
     branches:
-      - staging
       - develop
 
 env:
@@ -15,22 +14,11 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment:
+      name: develop
     steps:
       - name: 🧾 Checkout code
         uses: actions/checkout@v3
-
-      - name: ⚙️ Set environment variables
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
-            echo "ENVIRONMENT=Staging" >> $GITHUB_ENV
-            echo "SERVICE_NAME=braveheart-backend-staging" >> $GITHUB_ENV
-            echo "TAG=develop" >> $GITHUB_ENV 
-          else
-            echo "ENVIRONMENT=Development" >> $GITHUB_ENV
-            echo "SERVICE_NAME=braveheart-backend-develop" >> $GITHUB_ENV
-            echo "TAG=develop" >> $GITHUB_ENV
-          fi
 
       - name: 🔐 Authenticate to GCP
         run: |
@@ -44,16 +32,15 @@ jobs:
       - name: 🏗️ Build & Push Docker Image
         run: |
           docker build \
-            --build-arg ASPNETCORE_ENVIRONMENT=$ENVIRONMENT \
-            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:$TAG .
-          
-          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:$TAG
+            --build-arg ASPNETCORE_ENVIRONMENT=Development \
+            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop .
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop
 
       - name: 🚀 Deploy to Cloud Run
         run: |
-          gcloud run deploy $SERVICE_NAME \
-            --image $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:$TAG \
+          gcloud run deploy braveheart-backend-develop \
+            --image $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:develop \
             --region $REGION \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars ASPNETCORE_ENVIRONMENT=$ENVIRONMENT,DB_HOST=${{ vars.DB_HOST }},DB_PORT=${{ vars.DB_PORT }},DB_NAME=${{ vars.DB_NAME }},DB_USER=${{ vars.DB_USER }},DB_PASS=${{ vars.DB_PASS }},DB_SSL_MODE=${{ vars.DB_SSL_MODE }},JWT_ISSUER=${{ vars.JWT_ISSUER }},JWT_AUDIENCE=${{ vars.JWT_AUDIENCE }},JWT_SECRET_KEY=${{ vars.JWT_SECRET_KEY }},JWT_EXPIRY_MINUTES=${{ vars.JWT_EXPIRY_MINUTES }},CLOUDINARY_CLOUD_NAME=${{ vars.CLOUDINARY_CLOUD_NAME }},CLOUDINARY_API_KEY=${{ vars.CLOUDINARY_API_KEY }},CLOUDINARY_API_SECRET=${{ vars.CLOUDINARY_API_SECRET }},ADMIN_EMAIL=${{ vars.ADMIN_EMAIL }},ADMIN_PASSWORD=${{ vars.ADMIN_PASSWORD }}
+            --set-env-vars ASPNETCORE_ENVIRONMENT=Development,DB_HOST=${{ vars.DB_HOST }},DB_PORT=${{ vars.DB_PORT }},DB_NAME=${{ vars.DB_NAME }},DB_USER=${{ vars.DB_USER }},DB_PASS=${{ vars.DB_PASS }},DB_SSL_MODE=${{ vars.DB_SSL_MODE }},JWT_ISSUER=${{ vars.JWT_ISSUER }},JWT_AUDIENCE=${{ vars.JWT_AUDIENCE }},JWT_SECRET_KEY=${{ vars.JWT_SECRET_KEY }},JWT_EXPIRY_MINUTES=${{ vars.JWT_EXPIRY_MINUTES }},CLOUDINARY_CLOUD_NAME=${{ vars.CLOUDINARY_CLOUD_NAME }},CLOUDINARY_API_KEY=${{ vars.CLOUDINARY_API_KEY }},CLOUDINARY_API_SECRET=${{ vars.CLOUDINARY_API_SECRET }},ADMIN_EMAIL=${{ vars.ADMIN_EMAIL }},ADMIN_PASSWORD=${{ vars.ADMIN_PASSWORD }}
