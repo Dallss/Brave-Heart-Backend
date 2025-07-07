@@ -1,3 +1,5 @@
 project-roadmap.md
 /obj/
 .env
+.env.local
+.env.develop

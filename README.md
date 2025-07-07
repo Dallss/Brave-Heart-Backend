@@ -1,86 +1,56 @@
 # BraveHeartBackend
 
-BraveHeartBackend is an ASP.NET Core Web API project designed for robust backend development, featuring authentication, role management, logging, and a modular architecture for products and users. It uses PostgreSQL for data storage and supports JWT-based authentication.
+BraveHeartBackend is a backend API built with ASP.NET Core, designed to power the BraveHeart application. It provides a robust, secure, and modular foundation for managing users, products, and related business logic.
 
-## Features
+## Overview
 
-- ASP.NET Core 9 Web API
-- Entity Framework Core with PostgreSQL
-- JWT Authentication & Role-based Authorization
-- User and Product management endpoints
-- Serilog logging (console & file)
-- Swagger/OpenAPI documentation
-- Environment-based configuration
+BraveHeartBackend serves as the core backend for a product and user management system. It is structured to support scalable, maintainable development and integrates with modern authentication, logging, and cloud storage solutions.
 
+## Key Features
 
-## Getting Started
+- **ASP.NET Core 9 Web API**: Modern, high-performance RESTful API framework.
+- **Entity Framework Core with PostgreSQL**: Strongly-typed ORM for relational data, supporting migrations and seeding.
+- **JWT Authentication & Role-based Authorization**: Secure endpoints with support for user roles and token-based authentication.
+- **User Management**: Registration, login, Google Sign-In, and role assignment.
+- **Product Management**: CRUD operations for products, product types, attributes, and attribute values.
+- **Cloudinary Integration**: Secure image upload and signature generation for product images.
+- **Serilog Logging**: Structured logging to both console and rolling log files.
+- **Swagger/OpenAPI**: Built-in API documentation for easy exploration and testing.
+- **Environment-based Configuration**: Supports different settings for development and production.
 
-### Prerequisites
+## Architecture
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
-- [PostgreSQL](https://www.postgresql.org/download/)
-- (Optional) [Visual Studio Code](https://code.visualstudio.com/) or Visual Studio
+- **Modular Structure**: Separate folders for Controllers, Models, DTOs, Services, and Data access.
+- **Database**: Uses PostgreSQL for persistent storage, with migrations for schema evolution.
+- **Authentication**: Implements JWT for stateless authentication and supports role-based access control.
+- **Cloud Storage**: Integrates with Cloudinary for image management, including secure upload signatures.
+- **Logging**: Uses Serilog for detailed request and error logging, with daily log file rotation.
+- **API Documentation**: Swagger UI is available for interactive API exploration.
 
-### Setup
+## Entities
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repo-url>
-   cd BraveHeartBackend
-   ```
+- **User**: Application users with support for roles and refresh tokens.
+- **Product**: Items managed by the system, linked to product types and attributes.
+- **ProductType**: Categories or types of products, each with its own set of attributes.
+- **ProductAttribute**: Defines characteristics for product types (e.g., color, size).
+- **ProductAttributeValue**: Stores values for attributes assigned to products.
+- **CartItem**: Represents items in a user's shopping cart.
+- **CheckoutDetails**: Stores checkout and shipping information for orders.
 
-2. **Create a `.env` file in the project root:**
+## Relationships
 
-   ```
-   DB_HOST=localhost
-   DB_PORT=5432
-   DB_NAME=braveheartdb
-   DB_USER=your_db_user
-   DB_PASS=your_db_password
+- **ProductType → Product**: One-to-many, with cascade delete (deleting a product type removes its products).
+- **Product → ProductAttributeValue**: One-to-many, linking products to their attribute values.
+- **User → CartItem**: One-to-many, each user can have multiple cart items.
 
-   JWT_ISSUER=BraveHeartAPI
-   JWT_AUDIENCE=BraveHeartClient
-   JWT_SECRET_KEY=your_super_secret_key
-   JWT_EXPIRY_MINUTES=60
+## Logging & Monitoring
 
-   ADMIN_EMAIL=admin@example.com
-   ADMIN_PASSWORD=Admin123!
-   ```
+- All API activity and errors are logged using Serilog, with logs stored in the `Logs/` directory and output to the console.
 
-   > The application loads environment variables from `.env` for database and JWT configuration.
+## API Documentation
 
-3. **Install dependencies:**
-   ```bash
-   dotnet restore
-   ```
+- The API is self-documented using Swagger/OpenAPI, making it easy to explore endpoints and data models.
 
-4. **Apply database migrations:**
-   ```bash
-   dotnet ef database update
-   ```
+---
 
-5. **Run the application:**
-   ```bash
-   dotnet run
-   ```
-
-   The API will be available at `https://localhost:5001` (or as configured).
-
-### API Documentation
-
-- Swagger UI is available at `/swagger` in development mode.
-
-### Logging
-
-- Logs are written to the `Logs/` directory with daily rolling files.
-
-## Development Notes
-
-- The admin user is created automatically on startup if it does not exist, using credentials from the `.env` file.
-- JWT settings can be found in `appsettings.json` and overridden by environment variables.
-- For development-specific settings, see `appsettings.Development.json`.
-
-
-## License
-
-[MIT](LICENSE) (or specify your license) 
+BraveHeartBackend is designed for extensibility, security, and ease of integration with modern frontend applications and cloud services. 

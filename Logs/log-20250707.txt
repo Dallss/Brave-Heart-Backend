@@ -6584,3 +6584,4 @@ ORDER BY p."Id"
 2025-07-07 07:27:34.422 +08:00 [INF] Executed action BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend) in 3.6673ms
 2025-07-07 07:27:34.422 +08:00 [INF] Executed endpoint 'BraveHeartBackend.Controllers.ProductTypeController.GetAll (BraveHeartBackend)'
 2025-07-07 07:27:34.423 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/ProductType - 200 null application/json; charset=utf-8 4.9305ms
+2025-07-07 07:29:32.021 +08:00 [INF] Application is shutting down...

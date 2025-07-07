@@ -15,7 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Load environment variables from .env
 if (builder.Environment.IsDevelopment())
 {
-    DotNetEnv.Env.Load(".env.development");
+    DotNetEnv.Env.Load(".env.local");
+    Console.WriteLine("Loading .env.local ----------------------------------");
+    Console.WriteLine(Environment.GetEnvironmentVariable("DB_HOST"));
 }
 
 
