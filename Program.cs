@@ -77,28 +77,19 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<JwtService>();
 
 // Add CORS policy
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddCors(options =>
+var allowedOrigins = Environment.GetEnvironmentVariable("ALLOWED_ORIGINS")?
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    ?? Array.Empty<string>();
+
+
+builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowFrontend",
-            policy => policy.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://localhost:5173", "http://localhost:8080")
-                              .AllowAnyHeader()
-                              .AllowAnyMethod()
-                              .AllowCredentials());
+            policy => policy.WithOrigins(allowedOrigins)
+                                .AllowAnyHeader()
+                                .AllowAnyMethod()
+                                .AllowCredentials());
     });
-}
-else
-{
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy("AllowFrontend",
-            policy => policy.WithOrigins("https://dallss.github.io/")
-                              .AllowAnyHeader()
-                              .AllowAnyMethod()
-                              .AllowCredentials());
-    });
-}
 
 // Register CloudinaryService
 builder.Services.AddSingleton<CloudinaryService>(sp =>
@@ -133,8 +124,8 @@ var app = builder.Build();
 // }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowFrontend"); // Enable CORS before authentication
-app.UseAuthentication(); // ✅ JWT Auth
+app.UseCors("AllowFrontend");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
